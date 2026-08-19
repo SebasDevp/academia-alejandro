@@ -334,243 +334,84 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-  /* =======================================================
-   VIMEO MODAL
-   Usa directamente el SRC oficial generado por Vimeo
-======================================================= */
 
-const closeVideo =
-  () => {
+  /* -------------------------------------------------------
+     VIMEO MODAL — usa el SRC oficial generado por Vimeo
 
-    if (
-      !videoModal ||
-      !videoModalFrame
-    ) {
-      return;
-    }
+     El HTML debe incluir:
+     data-vimeo-src="https://player.vimeo.com/video/..."
+  ------------------------------------------------------- */
+  let lastVideoTrigger = null;
 
+  const closeVideo = () => {
+    if (!videoModal || !videoModalFrame) return;
 
-    videoModal.classList.remove(
-      'is-open'
-    );
-
-
-    videoModal.setAttribute(
-      'aria-hidden',
-      'true'
-    );
-
+    videoModal.classList.remove('is-open');
+    videoModal.setAttribute('aria-hidden', 'true');
 
     /*
-     * Al borrar el iframe,
-     * Vimeo también deja de reproducirse.
+     * Remover el iframe detiene la reproducción de Vimeo
+     * y evita que el video siga sonando detrás de la web.
      */
+    videoModalFrame.replaceChildren();
+    body.classList.remove('video-open');
 
-    videoModalFrame.innerHTML =
-      '';
-
-
-    body.classList.remove(
-      'video-open'
-    );
-
+    if (lastVideoTrigger instanceof HTMLElement) {
+      lastVideoTrigger.focus({ preventScroll: true });
+    }
   };
 
-
-
-const openVimeo =
-  videoSrc => {
-
-    if (
-      !videoModal ||
-      !videoModalFrame
-    ) {
-      return;
-    }
-
-
-    /*
-     * Comprobamos que exista
-     * una URL válida de Vimeo.
-     */
+  const openVimeo = (videoSrc, trigger = null) => {
+    if (!videoModal || !videoModalFrame) return;
 
     if (
       !videoSrc ||
-      !videoSrc.startsWith(
-        'https://player.vimeo.com/'
-      )
+      !videoSrc.startsWith('https://player.vimeo.com/')
     ) {
-
-      console.warn(
-        'Vimeo: falta una URL válida del reproductor.'
-      );
-
+      console.warn('Vimeo: falta una URL válida del reproductor.');
       return;
-
     }
 
+    lastVideoTrigger = trigger;
 
+    const iframe = document.createElement('iframe');
 
-    /*
-     * Creamos el iframe usando
-     * EXACTAMENTE el SRC generado por Vimeo.
-     */
-
-    const iframe =
-      document.createElement(
-        'iframe'
-      );
-
-
-    iframe.src =
-      videoSrc;
-
-
-    iframe.setAttribute(
-      'frameborder',
-      '0'
-    );
-
-
+    iframe.src = videoSrc;
+    iframe.setAttribute('frameborder', '0');
     iframe.setAttribute(
       'allow',
       'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share'
     );
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('title', 'Introducción — Academia Deportiva Digital');
 
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = '0';
 
-    iframe.setAttribute(
-      'referrerpolicy',
-      'strict-origin-when-cross-origin'
-    );
+    videoModalFrame.replaceChildren(iframe);
+    videoModal.classList.add('is-open');
+    videoModal.setAttribute('aria-hidden', 'false');
+    body.classList.add('video-open');
 
-
-    iframe.setAttribute(
-      'allowfullscreen',
-      ''
-    );
-
-
-    iframe.setAttribute(
-      'title',
-      'INTRO_ACADEMIA_EDIT'
-    );
-
-
-
-    /*
-     * El iframe ocupa todo
-     * el modal responsive.
-     */
-
-    iframe.style.width =
-      '100%';
-
-
-    iframe.style.height =
-      '100%';
-
-
-    iframe.style.border =
-      '0';
-
-
-
-    /*
-     * Limpiamos el modal
-     * y agregamos el reproductor.
-     */
-
-    videoModalFrame.replaceChildren(
-      iframe
-    );
-
-
-    videoModal.classList.add(
-      'is-open'
-    );
-
-
-    videoModal.setAttribute(
-      'aria-hidden',
-      'false'
-    );
-
-
-    body.classList.add(
-      'video-open'
-    );
-
-
-    videoModal
-      .querySelector(
-        '.video-modal__close'
-      )
-      ?.focus();
-
+    videoModal.querySelector('.video-modal__close')?.focus();
   };
 
+  document.querySelectorAll('[data-vimeo-src]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      openVimeo(trigger.dataset.vimeoSrc, trigger);
+    });
+  });
 
+  document.querySelectorAll('[data-close-video]').forEach(control => {
+    control.addEventListener('click', closeVideo);
+  });
 
-/* =======================================================
-   VIDEO TRIGGERS
-======================================================= */
+  videoModal
+    ?.querySelector('.video-modal__close')
+    ?.addEventListener('click', closeVideo);
 
-document
-  .querySelectorAll(
-    '[data-vimeo-src]'
-  )
-  .forEach(
-    trigger => {
-
-      trigger.addEventListener(
-        'click',
-        () => {
-
-          const videoSrc =
-            trigger.dataset.vimeoSrc;
-
-
-          openVimeo(
-            videoSrc
-          );
-
-        }
-      );
-
-    }
-  );
-
-
-
-/* =======================================================
-   CLOSE VIDEO
-======================================================= */
-
-document
-  .querySelectorAll(
-    '[data-close-video]'
-  )
-  .forEach(
-    control => {
-
-      control.addEventListener(
-        'click',
-        closeVideo
-      );
-
-    }
-  );
-
-
-
-videoModal
-  ?.querySelector(
-    '.video-modal__close'
-  )
-  ?.addEventListener(
-    'click',
-    closeVideo
-  );
   /* -------------------------------------------------------
      KEYBOARD
   ------------------------------------------------------- */
