@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academia Deportiva Digital. Entrenamiento, formación y asesoría basados en método, diagnóstico y planificación.">
+  <meta name="theme-color" content="#0b1735">
+  <title>Academia Deportiva Digital — Alejandro Cortez</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./Assets/Style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <span class="preloader__brand">ADD<span>.</span></span>
+      <div class="preloader__line"><span></span></div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a href="#inicio" class="brand" aria-label="Academia Deportiva Digital, inicio">ACADEMIA<span>.</span></a>
+
+      <div class="nav__desktop">
+        <a href="#metodo" class="nav__link">El método</a>
+        <a href="#sistema-ingreso" class="nav__link">El sistema</a>
+        <a href="#alumnos" class="nav__link">Alumnos</a>
+        <a href="#entrenadores" class="nav__link">Entrenadores</a>
+        <a href="#contenido" class="nav__link">Academia</a>
+        <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="nav__cta">Entrar <span>↗</span></a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__inner">
+        <a href="#metodo" class="mobile-link"><span>01</span>El método</a>
+        <a href="#sistema-ingreso" class="mobile-link"><span>02</span>El sistema</a>
+        <a href="#alumnos" class="mobile-link"><span>03</span>Alumnos</a>
+        <a href="#entrenadores" class="mobile-link"><span>04</span>Entrenadores</a>
+        <a href="#gimnasios" class="mobile-link"><span>05</span>Gimnasios</a>
+        <a href="#contenido" class="mobile-link"><span>06</span>Academia</a>
+        <a href="#sobre-ale" class="mobile-link"><span>07</span>Sobre Ale</a>
+        <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="mobile-menu__cta">Entrar a la Academia <span>↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__noise" aria-hidden="true"></div>
+      <div class="hero__grid-lines" aria-hidden="true"></div>
+
+      <div class="container hero__container">
+        <div class="hero__content">
+          <div class="hero__eyebrow hero-animate">
+            <span class="hero__eyebrow-dot"></span>
+            Academia Deportiva Digital
+          </div>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-line hero-animate">ENTRENAR</span>
+            <span class="hero__title-line hero-animate">CON <em>CEREBRO.</em></span>
+          </h1>
+
+          <p class="hero__description hero-animate">
+            Una forma de entrenar, enseñar y crecer basada en <strong>método, diagnóstico y planificación</strong>. No en intuición.
+          </p>
+
+          <div class="hero__actions hero-animate">
+            <a href="#caminos" class="button button--primary">Encontrá tu camino <span class="button__arrow">↓</span></a>
+            <a href="#metodo" class="button button--ghost">Conocé el sistema</a>
+          </div>
+
+          <div class="hero__stats hero-animate" aria-label="Datos de trayectoria">
+            <div class="hero-stat">
+              <strong data-count="20" data-prefix="+">+0</strong>
+              <span>años de<br>experiencia</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-count="200" data-prefix="+" data-suffix="K">+0K</strong>
+              <span>alumnos<br>alcanzados</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-count="18">0</strong>
+              <span>años formando<br>entrenadores</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual hero-animate">
+          <div class="hero__photo-frame">
+            <img src="./Assets/img/Ale/ale-hero.jpeg" alt="Alejandro Cortez entrenando" class="hero__photo" id="heroPhoto" fetchpriority="high" decoding="async">
+            <div class="hero__photo-overlay" aria-hidden="true"></div>
+            <div class="hero__vertical-text" aria-hidden="true">PERFORMANCE / MÉTODO / EVOLUCIÓN</div>
+          </div>
+
+          <!-- La información queda fuera de la foto para no tapar el contenido visual -->
+          <div class="hero__visual-meta" aria-label="Pilares del sistema">
+            <div><span>01</span><p><small>SISTEMA</small><strong>MARI</strong></p></div>
+            <div><span>02</span><p><small>DIAGNÓSTICO</small><strong>PODIO</strong></p></div>
+            <div><span>03</span><p><small>PLANIFICACIÓN</small><strong>MATRIZ 54</strong></p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__big-word" aria-hidden="true">MOVIMIENTO</div>
+      <a href="#caminos" class="scroll-indicator" aria-label="Bajar a los caminos">
+        <span>SCROLL</span><div class="scroll-indicator__line"><i></i></div>
+      </a>
+    </section>
+
+    <!-- TICKER -->
+    <section class="ticker" aria-label="Conceptos de la Academia">
+      <div class="ticker__track">
+        <div class="ticker__content">
+          <span>DIAGNÓSTICO</span><i>✦</i><span>PLANIFICACIÓN</span><i>✦</i><span>PODIO</span><i>✦</i><span>MATRIZ 54</span><i>✦</i><span>MARI</span><i>✦</i><span>EVOLUCIÓN</span><i>✦</i>
+          <span>DIAGNÓSTICO</span><i>✦</i><span>PLANIFICACIÓN</span><i>✦</i><span>PODIO</span><i>✦</i><span>MATRIZ 54</span><i>✦</i><span>MARI</span><i>✦</i><span>EVOLUCIÓN</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAMINOS -->
+    <section class="paths section" id="caminos">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker" data-reveal><span>01</span>¿Quién sos?</div>
+          <div class="section-header__grid">
+            <h2 class="section-title" data-reveal>TRES CAMINOS.<br><em>UN MISMO SISTEMA.</em></h2>
+            <p class="section-description" data-reveal>
+              Elegí desde dónde querés entrar. La lógica es la misma: entender antes de actuar, diagnosticar antes de planificar y construir desde información real.
+            </p>
+          </div>
+        </header>
+
+        <div class="paths__grid">
+          <a href="#alumnos" class="path-card path-card--orange" data-tilt-card data-reveal>
+            <div class="path-card__number">01</div>
+            <div class="path-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8v8"></path><path d="M3 9.5v5"></path><path d="M18 8v8"></path><path d="M21 9.5v5"></path><path d="M6 12h12"></path></svg>
+            </div>
+            <div class="path-card__content">
+              <span class="path-card__label">SOY ALUMNO</span>
+              <h3>Quiero entrenar mejor.</h3>
+              <p>Entrenamiento a distancia con diagnóstico, seguimiento y una sesión que nace de tu realidad.</p>
+            </div>
+            <div class="path-card__footer"><span>Ver Sistema Evolución</span><strong>↘</strong></div>
+          </a>
+
+          <a href="#entrenadores" class="path-card path-card--purple" data-tilt-card data-reveal data-delay="90">
+            <div class="path-card__number">02</div>
+            <div class="path-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5V6a2 2 0 0 1 2-2h11a1 1 0 0 1 1 1v13"></path><path d="M6 17h11a2 2 0 0 1 2 2 2 2 0 0 1-2 2H6a2 2 0 0 1 0-4Z"></path><path d="M8 7h7"></path><path d="M8 10.5h5"></path></svg>
+            </div>
+            <div class="path-card__content">
+              <span class="path-card__label">SOY ENTRENADOR</span>
+              <h3>Quiero enseñar mejor.</h3>
+              <p>Formación, herramientas y método para dejar de improvisar y construir tu propio sistema.</p>
+            </div>
+            <div class="path-card__footer"><span>Ver formación</span><strong>↘</strong></div>
+          </a>
+
+          <a href="#gimnasios" class="path-card path-card--blue" data-tilt-card data-reveal data-delay="180">
+            <div class="path-card__number">03</div>
+            <div class="path-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15"></path><path d="M13 21V10a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v11"></path><path d="M7 8h1"></path><path d="M7 12h1"></path><path d="M7 16h1"></path><path d="M17 13h1"></path><path d="M17 17h1"></path><path d="M2 21h20"></path></svg>
+            </div>
+            <div class="path-card__content">
+              <span class="path-card__label">TENGO UN GIMNASIO</span>
+              <h3>Quiero crecer mejor.</h3>
+              <p>Estructura, procesos y planificación para construir un negocio que pueda sostenerse.</p>
+            </div>
+            <div class="path-card__footer"><span>Ver asesoría</span><strong>↘</strong></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO -->
+    <section class="method section section--dark" id="metodo">
+      <div class="method__background-word" aria-hidden="true">MÉTODO</div>
+      <div class="container">
+        <header class="section-header section-header--light">
+          <div class="section-kicker" data-reveal><span>02</span>El sistema</div>
+          <div class="section-header__grid">
+            <h2 class="section-title" data-reveal>MENOS AZAR.<br><em>MÁS INFORMACIÓN.</em></h2>
+            <p class="section-description" data-reveal>MARI organiza el proceso. PODIO ayuda a diagnosticar. La Matriz 54 transforma esa información en decisiones concretas de entrenamiento.</p>
+          </div>
+        </header>
+
+        <div class="method-flow">
+          <div class="method-step" data-reveal>
+            <span class="method-step__number">01</span><div class="method-step__circle">27</div><h3>Datos</h3><p>Formulario + entrevista personal.</p>
+          </div>
+          <div class="method-connector" aria-hidden="true"><span></span><i>→</i></div>
+          <div class="method-step" data-reveal data-delay="90">
+            <span class="method-step__number">02</span><div class="method-step__circle">9</div><h3>PODIO</h3><p>Niveles para interpretar el rendimiento.</p>
+          </div>
+          <div class="method-connector" aria-hidden="true"><span></span><i>→</i></div>
+          <div class="method-step" data-reveal data-delay="180">
+            <span class="method-step__number">03</span><div class="method-step__circle">54</div><h3>Matriz</h3><p>Variantes posibles de sesión.</p>
+          </div>
+          <div class="method-connector" aria-hidden="true"><span></span><i>→</i></div>
+          <div class="method-step method-step--featured" data-reveal data-delay="270">
+            <span class="method-step__number">04</span><div class="method-step__circle">✓</div><h3>Acción</h3><p>Una sesión coherente con la persona.</p>
+          </div>
+        </div>
+
+        <div class="method-quote" data-reveal>
+          <span class="method-quote__mark">“</span>
+          <p>No se trata de darte una rutina. Se trata de entender <strong>por qué esa sesión tiene sentido para vos.</strong></p>
+        </div>
+
+        <a href="#sistema-ingreso" class="method__next" data-reveal>Ver cómo entra una persona al sistema <span>↓</span></a>
+      </div>
+    </section>
+
+    <!-- SISTEMA DE INGRESO — MISMA ESTÉTICA, CONTENIDO DEL SISTEMA -->
+    <section class="entry-system section" id="sistema-ingreso">
+      <div class="container">
+        <header class="entry-system__header">
+          <div class="section-kicker" data-reveal><span>03</span>Del contacto a la sesión</div>
+          <div class="entry-system__heading-grid">
+            <div>
+              <h2 class="section-title" data-reveal>15 PASOS.<br><em>6 FASES.</em></h2>
+              <p class="entry-system__intro" data-reveal>El sistema de ingreso traduce una conversación inicial en información útil, un nivel PODIO y una sesión definida con criterio.</p>
+            </div>
+
+            <div class="entry-equation" data-reveal aria-label="16 preguntas de formulario más 11 preguntas de entrevista equivalen a 27 datos">
+              <div class="entry-equation__item"><strong>16</strong><span>formulario</span></div>
+              <i>+</i>
+              <div class="entry-equation__item entry-equation__item--accent"><strong>11</strong><span>entrevista</span></div>
+              <i>=</i>
+              <div class="entry-equation__item entry-equation__item--result"><strong>27</strong><span>datos reales</span></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="entry-summary" data-reveal>
+          <button class="entry-summary__tab is-active" type="button" data-entry-target="fase-01"><span>01</span>Captación</button>
+          <button class="entry-summary__tab" type="button" data-entry-target="fase-02"><span>02</span>Calificación</button>
+          <button class="entry-summary__tab" type="button" data-entry-target="fase-03"><span>03</span>Diagnóstico</button>
+          <button class="entry-summary__tab" type="button" data-entry-target="fase-04"><span>04</span>Decisión</button>
+          <button class="entry-summary__tab" type="button" data-entry-target="fase-05"><span>05</span>Onboarding</button>
+          <button class="entry-summary__tab" type="button" data-entry-target="fase-06"><span>06</span>Ejecución</button>
+        </div>
+
+        <div class="entry-phases">
+          <article class="entry-phase is-open" id="fase-01" data-entry-phase>
+            <button class="entry-phase__head" type="button" aria-expanded="true">
+              <div><span>01 / CAPTACIÓN</span><h3>El primer contacto abre una conversación real.</h3></div><i>−</i>
+            </button>
+            <div class="entry-phase__body">
+              <div class="entry-step"><span>01</span><div><h4>Meta Ads → WhatsApp</h4><p>La persona llega desde el anuncio y escribe directo, sin recorridos innecesarios.</p></div></div>
+              <div class="entry-step"><span>02</span><div><h4>Primer mensaje personal</h4><p>Ale busca comprender la situación antes de ofrecer algo genérico.</p></div></div>
+              <div class="entry-step"><span>03</span><div><h4>Cómo funciona</h4><p>Si hace falta, se explica el proceso en pocas etapas y se ordenan las dudas iniciales.</p></div></div>
+            </div>
+          </article>
+
+          <article class="entry-phase" id="fase-02" data-entry-phase>
+            <button class="entry-phase__head" type="button" aria-expanded="false">
+              <div><span>02 / CALIFICACIÓN COMERCIAL</span><h3>La propuesta correcta depende de la necesidad real.</h3></div><i>+</i>
+            </button>
+            <div class="entry-phase__body">
+              <div class="entry-step"><span>04</span><div><h4>Presentación de los tres planes</h4><p>Auto Gestión, Guía y Mentor Personal: tres niveles de acompañamiento, no una única respuesta para todos.</p></div></div>
+              <div class="entry-step"><span>05</span><div><h4>Agendado de videollamada</h4><p>Para Plan Guía, el proceso continúa con entrevista y diagnóstico.</p></div></div>
+            </div>
+          </article>
+
+          <article class="entry-phase entry-phase--featured" id="fase-03" data-entry-phase>
+            <button class="entry-phase__head" type="button" aria-expanded="false">
+              <div><span>03 / DIAGNÓSTICO</span><h3>El punto donde la información se vuelve criterio.</h3></div><i>+</i>
+            </button>
+            <div class="entry-phase__body">
+              <div class="entry-step"><span>06</span><div><h4>Formulario — 16 preguntas</h4><p>Edad, experiencia, objetivos, lesiones, entorno y recursos disponibles.</p></div></div>
+              <div class="entry-step entry-step--wide"><span>07</span><div><h4>Entrevista personal — 11 preguntas cualitativas</h4><p>15 a 30 minutos para leer lo que un formulario no capta: postura, relación con el cuerpo, historia deportiva, tolerancia, vitalidad, expectativas y conciencia corporal.</p><div class="entry-tags"><span>Objetivo real</span><span>Postura</span><span>Historia deportiva</span><span>Dolor y carga</span><span>Vitalidad</span><span>Movilidad</span><span>Hábitos</span><span>Conciencia corporal</span></div></div></div>
+            </div>
+          </article>
+
+          <article class="entry-phase" id="fase-04" data-entry-phase>
+            <button class="entry-phase__head" type="button" aria-expanded="false">
+              <div><span>04 / DECISIÓN Y PAGO</span><h3>La decisión sucede con toda la información sobre la mesa.</h3></div><i>+</i>
+            </button>
+            <div class="entry-phase__body entry-phase__body--three">
+              <div class="entry-step"><span>08</span><div><h4>Cierre de llamada</h4><p>Se comparte la información completa del plan elegido.</p></div></div>
+              <div class="entry-step"><span>09</span><div><h4>Bienvenida</h4><p>Se envían los datos necesarios para completar el ingreso.</p></div></div>
+              <div class="entry-step"><span>10</span><div><h4>Confirmación</h4><p>El comprobante confirma el lugar y habilita el onboarding.</p></div></div>
+            </div>
+          </article>
+
+          <article class="entry-phase" id="fase-05" data-entry-phase>
+            <button class="entry-phase__head" type="button" aria-expanded="false">
+              <div><span>05 / ONBOARDING TÉCNICO</span><h3>Acceso, nivel y comunidad se ordenan en secuencia.</h3></div><i>+</i>
+            </button>
+            <div class="entry-phase__body entry-phase__body--three">
+              <div class="entry-step"><span>11</span><div><h4>Acceso a Klouser</h4><p>La persona entra a la Academia y a sus contenidos.</p></div></div>
+              <div class="entry-step"><span>12</span><div><h4>Nivel PODIO</h4><p>Las 27 respuestas se cruzan para definir el punto de partida.</p></div></div>
+              <div class="entry-step"><span>13</span><div><h4>Grupo por nivel</h4><p>Con el PODIO definido, entra al espacio de seguimiento correspondiente.</p></div></div>
+            </div>
+          </article>
+
+          <article class="entry-phase" id="fase-06" data-entry-phase>
+            <button class="entry-phase__head" type="button" aria-expanded="false">
+              <div><span>06 / EJECUCIÓN</span><h3>La sesión aparece al final del diagnóstico, no al principio.</h3></div><i>+</i>
+            </button>
+            <div class="entry-phase__body">
+              <div class="entry-step"><span>14</span><div><h4>Sesión asignada — Matriz 54</h4><p>Nivel PODIO + entorno + complejidad definen una variante concreta.</p></div></div>
+              <div class="entry-step"><span>15</span><div><h4>Seguimiento continuo</h4><p>Correcciones, cargas y dudas sostienen el proceso en el tiempo.</p></div></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="entry-system__cta" data-reveal>
+          <p><span>EL RESULTADO</span> No es una rutina elegida antes de conocerte. Es una sesión que aparece después de entender tu contexto.</p>
+          <a href="#alumnos" class="text-link text-link--orange">Ver experiencia para alumnos <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALUMNOS — MARCADAMENTE NARANJA/CLARO -->
+    <section class="audience audience--orange audience--student" id="alumnos">
+      <div class="audience__topline" aria-hidden="true"><span>ALUMNOS / SISTEMA EVOLUCIÓN</span></div>
+      <div class="container audience__container">
+        <div class="audience__media" data-reveal>
+          <div class="audience__image-wrap">
+            <img src="./Assets/img/Alumnos/alumno-entrenando.jpg" alt="Alumno realizando entrenamiento personalizado" class="audience__image" loading="lazy" decoding="async">
+            <div class="audience__image-shade"></div>
+            <span class="audience__index">01</span>
+            <div class="audience__media-copy"><small>SISTEMA EVOLUCIÓN</small><strong>PARA ALUMNOS</strong></div>
+          </div>
+          <div class="audience__media-meta"><span>DIAGNÓSTICO</span><span>SESIÓN</span><span>SEGUIMIENTO</span></div>
+        </div>
+
+        <div class="audience__content">
+          <span class="audience__eyebrow" data-reveal>UNIDAD 01 / ALUMNOS</span>
+          <h2 class="audience__title" data-reveal>ENTRENAMIENTO PERSONAL<em>A DISTANCIA.</em></h2>
+          <p class="audience__lead" data-reveal>Para quien necesita entrenar solo, pero no quiere hacerlo sin guía. Tu sesión nace del diagnóstico y no de una rutina genérica elegida al azar.</p>
+
+          <div class="audience__features">
+            <article class="feature-row" data-reveal><span class="feature-row__number">01</span><div><h3>Entrevista personal</h3><p>Un encuentro para conocer historia deportiva, objetivos, contexto, hábitos y relación con el entrenamiento.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">02</span><div><h3>Diagnóstico PODIO</h3><p>La información se utiliza para ubicar tu punto de partida dentro de nueve niveles.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">03</span><div><h3>Sesión por Matriz 54</h3><p>Nivel, entorno y complejidad se cruzan para definir una sesión coherente con tu situación.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">04</span><div><h3>Seguimiento real</h3><p>Correcciones técnicas, ajustes y resolución de dudas a través de WhatsApp.</p></div></article>
+          </div>
+
+          <div class="audience__actions" data-reveal>
+            <a href="#planes" class="button button--primary">Ver planes <span>↓</span></a>
+            <a href="#sistema-ingreso" class="text-link">Ver cómo funciona <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="plans section" id="planes">
+      <div class="container">
+        <header class="plans__header">
+          <div>
+            <span class="section-kicker" data-reveal><span>04</span>Sistema Evolución</span>
+            <h2 class="section-title" data-reveal>ELEGÍ CÓMO<br><em>ACOMPAÑARTE.</em></h2>
+          </div>
+          <p data-reveal>Tres niveles de acompañamiento según la autonomía, seguimiento y personalización que necesites.</p>
+        </header>
+
+        <div class="plans__grid">
+          <article class="plan-card" data-reveal>
+            <div class="plan-card__top"><span class="plan-card__number">01</span><span class="plan-card__type">AUTONOMÍA</span></div>
+            <h3>Auto Gestión</h3>
+            <div class="plan-card__price"><span>$</span>29.900</div>
+            <span class="plan-card__period">ARS / mes</span>
+            <ul><li>Acceso a la Academia</li><li>Biblioteca de contenidos</li><li>Videos y material educativo</li><li>Armás tu propio recorrido</li></ul>
+            <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="plan-card__button">Ver academia <span>↗</span></a>
+          </article>
+
+          <article class="plan-card plan-card--featured" data-reveal data-delay="90">
+            <div class="plan-card__badge">MÁS ELEGIDO</div>
+            <div class="plan-card__top"><span class="plan-card__number">02</span><span class="plan-card__type">ACOMPAÑAMIENTO</span></div>
+            <h3>Plan Guía</h3>
+            <div class="plan-card__price"><span>$</span>49.900</div>
+            <span class="plan-card__period">ARS / mes</span>
+            <ul><li>Entrevista inicial</li><li>Diagnóstico PODIO</li><li>Acceso a la Academia</li><li>Seguimiento por WhatsApp</li><li>Correcciones y ajustes</li></ul>
+            <a href="#contacto" class="plan-card__button">Quiero empezar <span>→</span></a>
+          </article>
+
+          <article class="plan-card" data-reveal data-delay="180">
+            <div class="plan-card__top"><span class="plan-card__number">03</span><span class="plan-card__type">1 A 1</span></div>
+            <h3>Mentor Personal</h3>
+            <div class="plan-card__price"><span>$</span>290.000</div>
+            <span class="plan-card__period">ARS / mes</span>
+            <ul><li>Mentoría individual</li><li>Entrenamiento personalizado</li><li>Seguimiento exclusivo</li><li>Atención prioritaria</li></ul>
+            <a href="#contacto" class="plan-card__button">Consultar <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTRENADORES — MARCADAMENTE VIOLETA/OSCURO -->
+    <section class="audience audience--purple audience--reverse audience--trainer" id="entrenadores">
+      <div class="audience__topline" aria-hidden="true"><span>ENTRENADORES / FORMACIÓN</span></div>
+      <div class="container audience__container">
+        <div class="audience__media" data-reveal>
+          <div class="audience__image-wrap">
+            <img src="./Assets/img/Entrenadores/ale-formacion.jpg" alt="Alejandro Cortez formando entrenadores" class="audience__image" loading="lazy" decoding="async">
+            <div class="audience__image-shade"></div>
+            <span class="audience__index">02</span>
+            <div class="audience__media-copy"><small>FORMACIÓN</small><strong>PARA ENTRENADORES</strong></div>
+          </div>
+          <div class="audience__media-meta"><span>MÉTODO</span><span>DOCENCIA</span><span>PROYECTO</span></div>
+        </div>
+
+        <div class="audience__content">
+          <span class="audience__eyebrow" data-reveal>UNIDAD 02 / ENTRENADORES</span>
+          <h2 class="audience__title" data-reveal>APRENDER A PENSAR<em>EL ENTRENAMIENTO.</em></h2>
+          <p class="audience__lead" data-reveal>Formación para entrenadores y profes que quieren trabajar con más método, profesionalizar su práctica o construir su propio proyecto.</p>
+
+          <div class="audience__features">
+            <article class="feature-row" data-reveal><span class="feature-row__number">01</span><div><h3>Cursos y workshops</h3><p>Formatos orientados a transformar teoría en herramientas aplicables.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">02</span><div><h3>Método MARI</h3><p>Diagnóstico, PODIO, planificación y lógica de Matriz 54 aplicada al trabajo del entrenador.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">03</span><div><h3>Construcción de proyecto</h3><p>Pasar de solamente dar clases a construir una propuesta profesional con estructura.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">04</span><div><h3>Experiencia docente</h3><p>Más de una década formando entrenadores y enseñando a enseñar.</p></div></article>
+          </div>
+
+          <div class="trainer-paths" data-reveal>
+            <a href="#contenido"><span>01</span><strong>Aprender técnica</strong><small>Biblioteca y contenidos</small></a>
+            <a href="#metodo"><span>02</span><strong>Aprender método</strong><small>MARI + PODIO + Matriz 54</small></a>
+            <a href="#contacto"><span>03</span><strong>Construir proyecto</strong><small>Formación y acompañamiento</small></a>
+          </div>
+
+          <div class="audience__actions" data-reveal>
+            <a href="#contacto" class="button button--purple">Quiero formarme <span>→</span></a>
+            <a href="#contenido" class="text-link">Ver contenidos <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="statement" aria-label="Filosofía de la Academia">
+      <div class="container statement__inner">
+        <span class="statement__number" data-reveal>/</span>
+        <p data-reveal>NO ENSEÑO RUTINAS.<br>ENSEÑO A <em>PENSAR EL ENTRENAMIENTO</em> COMO UN SISTEMA.</p>
+      </div>
+    </section>
+
+    <!-- GIMNASIOS -->
+    <section class="audience audience--blue" id="gimnasios">
+      <div class="container audience__container">
+        <div class="audience__media" data-reveal>
+          <div class="audience__image-wrap">
+            <img src="./Assets/img/Gimnasios/ale-asesoria-gimnasio.jpg" alt="Asesoría profesional para gimnasios" class="audience__image" loading="lazy" decoding="async">
+            <div class="audience__image-shade"></div>
+            <span class="audience__index">03</span>
+            <div class="audience__media-copy"><small>ASESORÍA</small><strong>PARA GIMNASIOS</strong></div>
+          </div>
+        </div>
+
+        <div class="audience__content">
+          <span class="audience__eyebrow" data-reveal>UNIDAD 03 / GIMNASIOS</span>
+          <h2 class="audience__title" data-reveal>CRECER SIN PERDER<em>LA ESTRUCTURA.</em></h2>
+          <p class="audience__lead" data-reveal>Asesoría para gimnasios que necesitan ordenar procesos, roles y decisiones antes de seguir creciendo.</p>
+          <div class="audience__features">
+            <article class="feature-row" data-reveal><span class="feature-row__number">01</span><div><h3>Diagnóstico actual</h3><p>Entender qué funciona, qué depende del dueño y dónde aparecen los principales límites.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">02</span><div><h3>Procesos y equipo</h3><p>Roles claros y procedimientos que reduzcan dependencia e improvisación.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">03</span><div><h3>Crecimiento realista</h3><p>Diseñar una estructura que acompañe el crecimiento sin volverlo insostenible.</p></div></article>
+            <article class="feature-row" data-reveal><span class="feature-row__number">04</span><div><h3>Sostenibilidad</h3><p>El objetivo no es solamente crecer, sino poder sostener lo construido.</p></div></article>
+          </div>
+          <a href="#contacto" class="text-link" data-reveal>Agendar diagnóstico <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE ALE -->
+    <section class="about section" id="sobre-ale">
+      <div class="container about__grid">
+        <div class="about__content">
+          <span class="section-kicker" data-reveal><span>05</span>Detrás del sistema</span>
+          <h2 class="about__title" data-reveal>ALEJANDRO<br><em>CORTEZ.</em></h2>
+          <div class="about__copy" data-reveal>
+            <p>Entrenador personal con más de 20 años de experiencia y una trayectoria que combina entrenamiento, formación y gestión.</p>
+            <p>La Academia nace de una idea simple: que entrenar no sea repetir ejercicios, sino aprender a tomar mejores decisiones sobre el cuerpo y el rendimiento.</p>
+          </div>
+          <div class="about__credentials" data-reveal><span>Preparador físico</span><span>Dirección de empresas</span><span>Formación de entrenadores</span><span>Método propio</span></div>
+          <a href="#contenido" class="text-link text-link--orange" data-reveal>Conocer la Academia <span>→</span></a>
+        </div>
+
+        <div class="about__visual" data-reveal>
+          <div class="about__image-frame">
+            <img src="./Assets/img/Ale/ale-about.jpeg" alt="Alejandro Cortez" loading="lazy" decoding="async">
+            <div class="about__orange-box"><span>+20</span><p>años pensando<br>el movimiento</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIA -->
+    <section class="academy-content section section--cream" id="contenido">
+      <div class="container">
+        <header class="content-heading">
+          <div>
+            <span class="section-kicker" data-reveal><span>06</span>La Academia</span>
+            <h2 class="section-title" data-reveal>APRENDÉ A ENTENDER<br><em>LO QUE HACÉS.</em></h2>
+          </div>
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="content-heading__link" data-reveal>Ver plataforma <span>↗</span></a>
+        </header>
+
+        <div class="content-filters" data-reveal role="group" aria-label="Filtrar contenidos">
+          <button type="button" class="content-filter is-active" data-filter="all">Todo</button>
+          <button type="button" class="content-filter" data-filter="meta">Ejercicios META</button>
+          <button type="button" class="content-filter" data-filter="calentamiento">Calentamiento</button>
+          <button type="button" class="content-filter" data-filter="ebook">E-books</button>
+        </div>
+
+        <div class="content-grid" id="contentGrid">
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card media-card--large" data-category="meta" data-reveal>
+            <div class="media-card__image"><img src="./Assets/img/Intros/ejercicios-meta-intro.jpg" alt="Introducción a Ejercicios META" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>EJERCICIOS META</span><h3>Introducción a los ejercicios META</h3><p>Técnica, progresiones y herramientas para entender cómo ejecutar mejor cada movimiento.</p></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="meta" data-reveal data-delay="70">
+            <div class="media-card__image"><img src="./Assets/img/Academia/cargada-pecho.jpg" alt="Cargada al pecho Power Clean" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>EJERCICIOS META</span><h3>Cargada al pecho</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="meta" data-reveal data-delay="120">
+            <div class="media-card__image"><img src="./Assets/img/Academia/progresion-estocada.jpg" alt="Progresión de la estocada" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>EJERCICIOS META</span><h3>Progresión de la estocada</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="meta" data-reveal>
+            <div class="media-card__image"><img src="./Assets/img/Intros/flexiones-pro.jpg" alt="Flexiones de brazos nivel PRO" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>EJERCICIOS META</span><h3>Flexiones de brazos — Nivel PRO</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="meta" data-reveal data-delay="70">
+            <div class="media-card__image"><img src="./Assets/img/Academia/escalera-coordinacion.jpg" alt="Escalera de coordinación" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>COORDINACIÓN</span><h3>Escalera de coordinación</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="calentamiento" data-reveal data-delay="120">
+            <div class="media-card__image"><img src="./Assets/img/Intros/intro-calentamiento.jpg" alt="Introducción al calentamiento general" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>CALENTAMIENTO</span><h3>Introducción al calentamiento general</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="calentamiento" data-reveal>
+            <div class="media-card__image"><img src="./Assets/img/Academia/movilidad-articular-1.jpg" alt="Movilidad articular parte 1" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>MOVILIDAD</span><h3>Movilidad articular — Parte 1</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="calentamiento" data-reveal data-delay="70">
+            <div class="media-card__image"><img src="./Assets/img/Academia/movilidad-articular-2.jpg" alt="Movilidad articular parte 2" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>MOVILIDAD</span><h3>Movilidad articular — Parte 2</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="calentamiento" data-reveal data-delay="120">
+            <div class="media-card__image"><img src="./Assets/img/Academia/cardio-1.jpg" alt="Cardio parte 1" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>CARDIO</span><h3>Cardio — Parte 1</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="calentamiento" data-reveal>
+            <div class="media-card__image"><img src="./Assets/img/Academia/cardio-2.jpg" alt="Cardio parte 2" loading="lazy" decoding="async"><span class="media-card__play">▶</span></div>
+            <div class="media-card__body"><span>CARDIO</span><h3>Cardio — Parte 2</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="ebook" data-reveal data-delay="70">
+            <div class="media-card__image media-card__image--book"><img src="./Assets/img/Ebooks/ebook-1.jpg" alt="Ebook Ir al gimnasio no es entrenar" loading="lazy" decoding="async"><span class="media-card__tag">E-BOOK</span></div>
+            <div class="media-card__body"><span>BIBLIOTECA</span><h3>Ir al gimnasio no es entrenar</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="ebook" data-reveal data-delay="120">
+            <div class="media-card__image media-card__image--book"><img src="./Assets/img/Ebooks/ebook-2.png" alt="Ebook 3 Preguntas Esenciales" loading="lazy" decoding="async"><span class="media-card__tag">E-BOOK</span></div>
+            <div class="media-card__body"><span>BIBLIOTECA</span><h3>3 Preguntas Esenciales</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="ebook" data-reveal>
+            <div class="media-card__image media-card__image--book"><img src="./Assets/img/Ebooks/ebook-3.png" alt="Ebook Entrenate con Futuro" loading="lazy" decoding="async"><span class="media-card__tag">E-BOOK</span></div>
+            <div class="media-card__body"><span>BIBLIOTECA</span><h3>Entrenate con Futuro</h3></div>
+          </a>
+
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="media-card" data-category="ebook" data-reveal data-delay="70">
+            <div class="media-card__image media-card__image--book"><img src="./Assets/img/Ebooks/ebook-4.png" alt="Ebook Fuerza Real" loading="lazy" decoding="async"><span class="media-card__tag">E-BOOK</span></div>
+            <div class="media-card__body"><span>BIBLIOTECA</span><h3>Fuerza Real</h3></div>
+          </a>
+        </div>
+        <!-- =================================================
+             INTRO ACADEMIA + VIDEO VIMEO
+        ================================================== -->
+        <section class="academy-intro" id="intro-academia">
+          <div class="academy-intro__grid">
+
+            <div class="academy-intro__content">
+              <div class="section-kicker" data-reveal>
+                <span>▶</span>
+                Academia Deportiva Digital
+              </div>
+
+              <h3 class="academy-intro__title" data-reveal>
+                ENTRENÁ CON EL CEREBRO DE UN PERSONAL TRAINER
+                <em>EN TU BOLSILLO.</em>
+              </h3>
+
+              <p class="academy-intro__lead" data-reveal>
+                El primer espacio de entrenamiento +40 con grupos reducidos de solo
+                <strong>6 personas</strong>, donde podés enviar tus videos para recibir
+                correcciones técnicas y aprender a entrenar con criterio, propósito y planificación.
+              </p>
+
+              <div class="academy-intro__stats" data-reveal>
+                <div>
+                  <strong>6</strong>
+                  <span>personas<br>por grupo</span>
+                </div>
+                <div>
+                  <strong>+20</strong>
+                  <span>años de<br>experiencia</span>
+                </div>
+                <div>
+                  <strong>+200K</strong>
+                  <span>alumnos<br>alcanzados</span>
+                </div>
+              </div>
+
+              <div class="academy-intro__copy">
+                <article class="academy-intro__copy-block" data-reveal>
+                  <span>01</span>
+                  <div>
+                    <h4>NO ES UN PDF DE RUTINAS.</h4>
+                    <p>
+                      A diferencia de los planes masivos, acá hay análisis técnico,
+                      seguimiento y una persona real mirando cómo entrenás. La idea no es
+                      solamente decirte qué ejercicio hacer: <strong>es enseñarte por qué lo hacés.</strong>
+                    </p>
+                  </div>
+                </article>
+
+                <article class="academy-intro__copy-block" data-reveal>
+                  <span>02</span>
+                  <div>
+                    <h4>UNA ACADEMIA 100% ONLINE.</h4>
+                    <p>
+                      Tenés una plataforma tipo Netflix con ejercicios, progresiones,
+                      videos teóricos y prácticos para acompañar cada etapa del entrenamiento,
+                      desde el calentamiento hasta la recuperación final.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="academy-intro__video" data-reveal>
+             <button
+  class="vimeo-poster academy-intro__poster academy-intro__poster--html"
+  type="button"
+
+  data-vimeo-src="https://player.vimeo.com/video/1185253314?h=5872a70537&badge=0&autopause=0&player_id=0&app_id=58479"
+
+  aria-label="Reproducir introducción a Academia Deportiva Digital"
+>
+
+
+  <!-- FONDO DECORATIVO -->
+
+  <span
+    class="academy-video-cover__glow"
+    aria-hidden="true"
+  ></span>
+
+
+  <span
+    class="academy-video-cover__grid"
+    aria-hidden="true"
+  ></span>
+
+
+
+  <!-- CABECERA -->
+
+  <div class="academy-video-cover__header">
+
+    <div>
+
+      <span class="academy-video-cover__eyebrow">
+        PRESENTACIÓN
+      </span>
+
+      <strong class="academy-video-cover__brand">
+        ACADEMIA DEPORTIVA DIGITAL
+      </strong>
+
+    </div>
+
+
+    <span class="academy-video-cover__index">
+      01
+    </span>
+
+  </div>
+
+
+
+  <!-- CENTRO -->
+
+  <div class="academy-video-cover__center">
+
+    <span class="academy-video-cover__micro">
+      ENTRENAMIENTO · MÉTODO · EVOLUCIÓN
+    </span>
+
+
+    <h3>
+      ENTRENÁ
+      <span>CON CEREBRO.</span>
+    </h3>
+
+
+    <div
+      class="academy-video-cover__line"
+      aria-hidden="true"
+    >
+      <i></i>
+    </div>
+
+
+    <p>
+      Conocé cómo funciona
+      la Academia Deportiva Digital.
+    </p>
+
+  </div>
+
+
+
+  <!-- PIE -->
+
+  <div class="academy-video-cover__footer">
+
+    <span class="vimeo-poster__button">
+
+      <i>
+        ▶
+      </i>
+
+      Ver presentación
+
+    </span>
+
+
+    <span class="academy-video-cover__footer-copy">
+      ALEJANDRO CORTEZ
+      <small>
+        ENTRENAR CON PROPÓSITO
+      </small>
+    </span>
+
+          </div>
+      /button>
+
+              <div class="academy-intro__video-meta">
+                <div>
+                  <span>01</span>
+                  <p>
+                    <small>ENTRENAMIENTO</small>
+                    <strong>CON MÉTODO</strong>
+                  </p>
+                </div>
+                <div>
+                  <span>02</span>
+                  <p>
+                    <small>CORRECCIONES</small>
+                    <strong>EN VIDEO</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="academy-intro__features" data-reveal>
+            <article>
+              <span>01</span>
+              <div>
+                <h4>Plataforma audiovisual</h4>
+                <p>Ejercicios, progresiones, calentamientos y contenidos teóricos y prácticos.</p>
+              </div>
+            </article>
+
+            <article>
+              <span>02</span>
+              <div>
+                <h4>Correcciones personalizadas</h4>
+                <p>Enviás tus videos y trabajamos directamente sobre tu técnica y ejecución.</p>
+              </div>
+            </article>
+
+            <article>
+              <span>03</span>
+              <div>
+                <h4>Dudas y Mates</h4>
+                <p>Encuentros periódicos para resolver preguntas, ordenar conceptos y seguir aprendiendo.</p>
+              </div>
+            </article>
+
+            <article>
+              <span>04</span>
+              <div>
+                <h4>Laboratorio en Acción</h4>
+                <p>Correcciones, análisis de casos reales y aprendizaje compartido entre alumnos y entrenadores.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="academy-intro__closing" data-reveal>
+            <div>
+              <span>LO MÁS IMPORTANTE</span>
+              <h3>
+                DEJAR DE ENTRENAR POR COSTUMBRE.
+                <em>EMPEZAR A ENTRENAR CON PROPÓSITO.</em>
+              </h3>
+            </div>
+
+            <div>
+              <p>
+                Vas a empezar a entender tu cuerpo, tus objetivos y tus límites.
+                Te voy guiando desde la fase de calentamiento, pasando por fuerza y flexibilidad,
+                hasta el estiramiento final. <strong>No solamente qué hacer, sino por qué hacerlo.</strong>
+              </p>
+
+              <a
+                href="https://www.klouser.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button--primary"
+              >
+                Entrar a la Academia
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta" id="contacto">
+      <div class="final-cta__word" aria-hidden="true">EMPEZÁ</div>
+      <div class="container final-cta__inner">
+        <span class="final-cta__eyebrow" data-reveal>EL PRÓXIMO PASO ES TUYO</span>
+        <h2 data-reveal>ELEGÍ TU PUNTO<br><em>DE ENTRADA.</em></h2>
+        <p data-reveal>No todos necesitan lo mismo. Por eso la Academia tiene caminos distintos, conectados por la misma lógica de trabajo.</p>
+
+        <div class="final-cta__routes" data-reveal>
+          <a href="#planes"><span>01</span><strong>Quiero entrenar</strong><i>→</i></a>
+          <a href="#entrenadores"><span>02</span><strong>Soy entrenador</strong><i>→</i></a>
+          <a href="#gimnasios"><span>03</span><strong>Tengo un gimnasio</strong><i>→</i></a>
+        </div>
+
+        <div class="final-cta__buttons" data-reveal>
+          <a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer" class="button button--white">Entrar a la Academia <span>↗</span></a>
+          <a href="#sistema-ingreso" class="button button--outline-white">Ver el proceso</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#inicio" class="footer__brand">ACADEMIA<span>.</span></a>
+        <p>Entrenamiento, formación y gestión deportiva basados en método.</p>
+      </div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <div class="footer__links">
+          <a href="#metodo">Método</a><a href="#sistema-ingreso">Sistema</a><a href="#alumnos">Alumnos</a><a href="#entrenadores">Entrenadores</a><a href="#gimnasios">Gimnasios</a><a href="#contenido">Academia</a><a href="#sobre-ale">Sobre Ale</a><a href="https://www.klouser.app" target="_blank" rel="noopener noreferrer">Klouser ↗</a>
+        </div>
+        <p>© 2026 Alejandro Cortez · Academia Deportiva Digital</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VIMEO MODAL -->
+  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video de Academia Deportiva">
+    <div class="video-modal__backdrop" data-close-video></div>
+    <div class="video-modal__dialog" role="document">
+      <button class="video-modal__close" type="button" data-close-video aria-label="Cerrar video">×</button>
+      <div class="video-modal__frame" id="videoModalFrame"></div>
+    </div>
+  </div>
+
+  <script src="./Assets/main.js"></script>
+</body>
+</html>
