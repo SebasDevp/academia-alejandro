@@ -272,53 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------------
-     ENTRY SYSTEM ACCORDION
-  ------------------------------------------------------- */
-  const entryPhases = document.querySelectorAll('[data-entry-phase]');
-  const entryTabs = document.querySelectorAll('[data-entry-target]');
-
-  const openEntryPhase = phase => {
-    if (!phase) return;
-    entryPhases.forEach(item => {
-      const isTarget = item === phase;
-      item.classList.toggle('is-open', isTarget);
-      const head = item.querySelector('.entry-phase__head');
-      const icon = head?.querySelector(':scope > i');
-      head?.setAttribute('aria-expanded', String(isTarget));
-      if (icon) icon.textContent = isTarget ? '−' : '+';
-    });
-    entryTabs.forEach(tab => tab.classList.toggle('is-active', tab.dataset.entryTarget === phase.id));
-  };
-
-  entryPhases.forEach(phase => {
-    const head = phase.querySelector('.entry-phase__head');
-    head?.addEventListener('click', () => {
-      if (phase.classList.contains('is-open')) {
-        phase.classList.remove('is-open');
-        head.setAttribute('aria-expanded', 'false');
-        const icon = head.querySelector(':scope > i');
-        if (icon) icon.textContent = '+';
-      } else {
-        openEntryPhase(phase);
-      }
-    });
-  });
-
-  entryTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const phase = document.getElementById(tab.dataset.entryTarget);
-      openEntryPhase(phase);
-      if (phase) {
-        const headerHeight = siteHeader ? siteHeader.offsetHeight : 0;
-        window.scrollTo({
-          top: phase.getBoundingClientRect().top + window.scrollY - headerHeight - 18,
-          behavior: prefersReducedMotion ? 'auto' : 'smooth'
-        });
-      }
-    });
-  });
-
-  /* -------------------------------------------------------
      CONTENT FILTERS
   ------------------------------------------------------- */
   const contentFilters = document.querySelectorAll('.content-filter');
@@ -411,6 +364,17 @@ document.addEventListener('DOMContentLoaded', () => {
   videoModal
     ?.querySelector('.video-modal__close')
     ?.addEventListener('click', closeVideo);
+
+
+  /* -------------------------------------------------------
+     SALES CTA FEEDBACK
+  ------------------------------------------------------- */
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      link.classList.add('is-contacting');
+      window.setTimeout(() => link.classList.remove('is-contacting'), 700);
+    });
+  });
 
   /* -------------------------------------------------------
      KEYBOARD
