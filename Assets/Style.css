@@ -1330,3 +1330,293 @@ a[href*="wa.me"]{text-underline-offset:4px}
   .student-priorities__cta{align-items:stretch;flex-direction:column;padding:24px 20px}
   .student-priorities__cta .button{width:100%}
 }
+
+
+/* =========================================================
+   BRAND / LOGO — V3
+   Se conserva el PNG transparente original y se adapta
+   cromáticamente al fondo mediante CSS.
+========================================================= */
+
+.preloader__logo{
+  display:block;
+  width:clamp(150px,18vw,205px);
+  height:auto;
+  margin:0 auto 20px;
+  filter:brightness(0) invert(1);
+  opacity:.98;
+  animation:brandLoaderPulse 1.55s ease-in-out infinite;
+}
+
+@keyframes brandLoaderPulse{
+  0%,100%{transform:scale(.985);opacity:.78}
+  50%{transform:scale(1.025);opacity:1}
+}
+
+.hero__brand-logo{
+  display:block;
+  width:clamp(150px,14vw,215px);
+  height:auto;
+  margin:0 0 22px;
+  filter:brightness(0) invert(1);
+  opacity:.96;
+  object-fit:contain;
+}
+
+.media-card__link-hint{
+  display:inline-flex!important;
+  align-items:center;
+  width:max-content;
+  margin-top:16px;
+  padding-top:12px;
+  border-top:1px solid rgba(0,52,103,.12);
+  color:var(--orange)!important;
+  font-size:.61rem!important;
+  font-weight:800!important;
+  letter-spacing:.09em!important;
+  text-transform:uppercase;
+  transition:gap .25s ease,transform .25s ease;
+}
+
+.media-card:hover .media-card__link-hint{
+  transform:translateX(3px);
+}
+
+@media (max-width:640px){
+  .preloader__logo{width:145px}
+  .hero__brand-logo{
+    width:150px;
+    margin-bottom:18px;
+  }
+}
+
+
+/* =========================================================
+   BRAND HEADER + E-BOOK EXPERIENCE — V4
+========================================================= */
+body.ebook-open{overflow:hidden}
+
+.brand--logo{
+  display:flex;
+  align-items:center;
+  width:72px;
+  height:72px;
+  overflow:visible;
+}
+.brand--logo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:.98;
+  transition:transform .3s var(--ease),opacity .3s ease;
+}
+.brand--logo:hover img{transform:scale(1.045);opacity:1}
+
+.footer__brand--logo{display:block;width:112px;text-decoration:none}
+.footer__brand--logo img{display:block;width:100%;height:auto;filter:brightness(0) invert(1);opacity:.92}
+
+/* El logo ya vive en el header; se elimina la versión repetida del hero */
+.hero__content>.hero__eyebrow{margin-top:4px}
+
+/* --- Biblioteca: e-books con jerarquía editorial --- */
+.media-card--ebook{cursor:pointer;text-align:left}
+button.media-card--ebook{width:100%;font:inherit}
+.media-card--ebook-featured{
+  grid-column:1/-1;
+  border:0;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--teal-dark) 58%,var(--teal) 100%);
+  color:var(--white);
+  min-height:460px;
+  overflow:hidden;
+}
+.media-card--ebook-featured:hover{box-shadow:0 30px 75px rgba(0,52,103,.22);transform:translateY(-7px)}
+.ebook-featured__stage{
+  position:relative;
+  min-height:460px;
+  display:grid;
+  grid-template-columns:minmax(250px,.72fr) 1.28fr;
+  gap:70px;
+  align-items:center;
+  padding:48px 58px;
+  overflow:hidden;
+}
+.ebook-featured__stage:before{
+  content:'';
+  position:absolute;
+  width:430px;height:430px;
+  right:-110px;top:-190px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,111,49,.30),rgba(255,111,49,0) 70%);
+  pointer-events:none;
+}
+.ebook-featured__stage:after{
+  content:'EBOOK';
+  position:absolute;
+  right:-12px;bottom:-55px;
+  font-family:var(--font-display);
+  font-size:clamp(8rem,20vw,18rem);
+  line-height:.8;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+.ebook-book{
+  position:relative;
+  z-index:2;
+  width:min(270px,100%);
+  margin-inline:auto;
+  perspective:1100px;
+  transform:rotateY(-9deg) rotateX(1deg);
+  transform-origin:center;
+  filter:drop-shadow(24px 28px 26px rgba(0,0,0,.28));
+  transition:transform .55s var(--ease),filter .55s ease;
+}
+.media-card--ebook-featured:hover .ebook-book{
+  transform:rotateY(-3deg) rotateX(0) translateY(-7px);
+  filter:drop-shadow(18px 34px 30px rgba(0,0,0,.34));
+}
+.ebook-book img{
+  position:relative;
+  z-index:3;
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  border-radius:1px 5px 5px 1px;
+  border:1px solid rgba(255,255,255,.16);
+}
+.ebook-book__spine{
+  position:absolute;
+  z-index:4;
+  left:-13px;top:8px;bottom:8px;width:15px;
+  background:linear-gradient(90deg,#001d37,var(--navy),#0b5270);
+  transform:skewY(-4deg);
+  box-shadow:inset -3px 0 6px rgba(255,255,255,.08);
+}
+.ebook-book:after{
+  content:'';
+  position:absolute;
+  z-index:1;
+  left:14px;right:-11px;bottom:-12px;height:16px;
+  background:#efece4;
+  transform:skewX(-42deg);
+  transform-origin:left top;
+  box-shadow:0 8px 16px rgba(0,0,0,.18);
+}
+.ebook-featured__copy{position:relative;z-index:3;max-width:650px}
+.ebook-featured__eyebrow{
+  display:inline-flex;
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.28);
+  color:var(--sky);
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.13em;
+}
+.ebook-featured__copy h3{
+  max-width:620px;
+  margin-top:20px;
+  font-family:var(--font-display);
+  font-size:clamp(3.5rem,6vw,6.8rem);
+  line-height:.86;
+  font-weight:400;
+  color:var(--white);
+}
+.ebook-featured__copy p{
+  max-width:570px;
+  margin-top:22px;
+  color:rgba(255,255,255,.66);
+  font-size:.94rem;
+  line-height:1.72;
+}
+.ebook-featured__cta{
+  display:inline-flex;
+  margin-top:30px;
+  padding:13px 17px;
+  background:var(--orange);
+  color:var(--white)!important;
+  font-size:.7rem!important;
+  font-weight:800!important;
+  letter-spacing:.1em!important;
+  text-transform:uppercase;
+  transition:transform .3s var(--ease),background .3s ease;
+}
+.media-card--ebook-featured:hover .ebook-featured__cta{transform:translateX(5px);background:#ff7e47}
+
+.media-card--ebook-standard{position:relative;overflow:hidden}
+.media-card--ebook-standard .media-card__image--book{
+  display:grid;
+  place-items:center;
+  padding:28px 34px 22px;
+  background:linear-gradient(145deg,rgba(111,179,192,.18),rgba(0,124,140,.08));
+}
+.media-card--ebook-standard .media-card__image--book img{
+  width:88%;height:auto;aspect-ratio:auto;
+  padding:0;background:transparent;
+  object-fit:contain;
+  box-shadow:12px 18px 30px rgba(0,52,103,.14);
+  transform:perspective(800px) rotateY(-5deg);
+  transform-origin:left center;
+  transition:transform .55s var(--ease),box-shadow .55s ease;
+}
+.media-card--ebook-standard:hover .media-card__image--book img{
+  transform:perspective(800px) rotateY(0) translateY(-5px) scale(1.015);
+  box-shadow:8px 26px 38px rgba(0,52,103,.2);
+}
+.media-card--ebook-standard .media-card__tag{left:26px;bottom:18px}
+.media-card__ebook-note{margin-top:10px!important;color:rgba(20,20,20,.56)!important}
+.media-card--ebook-standard .media-card__link-hint{margin-top:18px}
+
+/* --- Lector PDF --- */
+.ebook-modal{
+  position:fixed;inset:0;z-index:1250;
+  display:grid;place-items:center;
+  padding:28px;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease,visibility .3s ease;
+}
+.ebook-modal.is-open{opacity:1;visibility:visible}
+.ebook-modal__backdrop{position:absolute;inset:0;background:rgba(2,13,28,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ebook-modal__dialog{
+  position:relative;z-index:2;
+  width:min(1180px,100%);
+  height:min(88vh,900px);
+  display:flex;flex-direction:column;
+  background:var(--white);
+  box-shadow:0 40px 120px rgba(0,0,0,.45);
+}
+.ebook-modal__topbar{
+  min-height:76px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:15px 20px 15px 24px;
+  background:var(--navy);color:var(--white);
+}
+.ebook-modal__topbar>div:first-child span{display:block;color:var(--sky);font-size:.55rem;font-weight:800;letter-spacing:.14em}
+.ebook-modal__topbar>div:first-child strong{display:block;margin-top:3px;font-family:var(--font-display);font-size:1.45rem;font-weight:400;letter-spacing:.03em}
+.ebook-modal__actions{display:flex;align-items:center;gap:12px}
+.ebook-modal__actions a{padding:10px 12px;border:1px solid rgba(255,255,255,.22);color:var(--white);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;transition:background .25s ease,border-color .25s ease}
+.ebook-modal__actions a:hover{background:var(--teal);border-color:var(--teal)}
+.ebook-modal__close{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);color:var(--white);font-size:1.8rem;line-height:1;cursor:pointer}
+.ebook-modal__close:hover{background:var(--orange);border-color:var(--orange)}
+.ebook-modal__viewer{flex:1;min-height:0;background:#dce4e8}
+.ebook-modal__viewer iframe{display:block;width:100%;height:100%;border:0;background:var(--white)}
+.ebook-modal__fallback{padding:9px 18px;background:#f5f7f8;color:rgba(20,20,20,.62);font-size:.68rem;text-align:center}
+
+@media(max-width:980px){
+  .brand--logo{width:66px;height:66px}
+  .ebook-featured__stage{grid-template-columns:240px 1fr;gap:42px;padding:40px}
+}
+@media(max-width:700px){
+  .brand--logo{width:60px;height:60px}
+  .ebook-featured__stage{grid-template-columns:1fr;gap:34px;padding:34px 24px 38px}
+  .ebook-book{width:190px;transform:rotateY(-6deg)}
+  .ebook-featured__copy{text-align:center;margin-inline:auto}
+  .ebook-featured__eyebrow{justify-content:center}
+  .ebook-featured__copy h3{font-size:clamp(3rem,15vw,4.8rem)}
+  .ebook-modal{padding:10px}
+  .ebook-modal__dialog{height:94vh}
+  .ebook-modal__topbar{align-items:flex-start;padding:13px 14px}
+  .ebook-modal__topbar>div:first-child strong{font-size:1.08rem}
+  .ebook-modal__actions a{display:none}
+  .ebook-modal__close{width:38px;height:38px}
+}

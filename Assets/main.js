@@ -367,6 +367,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* -------------------------------------------------------
+     E-BOOK READER — primer material disponible dentro de la web
+  ------------------------------------------------------- */
+  const ebookModal = document.getElementById('ebookModal');
+  const ebookModalFrame = document.getElementById('ebookModalFrame');
+  let lastEbookTrigger = null;
+
+  const closeEbook = () => {
+    if (!ebookModal || !ebookModalFrame) return;
+    ebookModal.classList.remove('is-open');
+    ebookModal.setAttribute('aria-hidden', 'true');
+    ebookModalFrame.removeAttribute('src');
+    body.classList.remove('ebook-open');
+    if (lastEbookTrigger instanceof HTMLElement) {
+      lastEbookTrigger.focus({ preventScroll: true });
+    }
+  };
+
+  const openEbook = (pdfSrc, trigger = null) => {
+    if (!ebookModal || !ebookModalFrame || !pdfSrc) return;
+    lastEbookTrigger = trigger;
+    ebookModalFrame.src = `${pdfSrc}#page=1&view=FitH`;
+    ebookModal.classList.add('is-open');
+    ebookModal.setAttribute('aria-hidden', 'false');
+    body.classList.add('ebook-open');
+    ebookModal.querySelector('.ebook-modal__close')?.focus();
+  };
+
+  document.querySelectorAll('[data-open-ebook]').forEach(trigger => {
+    trigger.addEventListener('click', () => openEbook(trigger.dataset.ebookSrc, trigger));
+  });
+
+  document.querySelectorAll('[data-close-ebook]').forEach(control => {
+    control.addEventListener('click', closeEbook);
+  });
+
+  /* -------------------------------------------------------
      SALES CTA FEEDBACK
   ------------------------------------------------------- */
   document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
@@ -383,5 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key !== 'Escape') return;
     closeMenu();
     closeVideo();
+    closeEbook();
   });
 });
