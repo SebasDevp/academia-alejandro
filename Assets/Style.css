@@ -1620,3 +1620,122 @@ button.media-card--ebook{width:100%;font:inherit}
   .ebook-modal__actions a{display:none}
   .ebook-modal__close{width:38px;height:38px}
 }
+
+
+/* =========================================================
+   V5 — NUEVA ARQUITECTURA NARRATIVA
+   POR QUÉ → PARA QUÉ → CÓMO → QUÉ
+   La identidad visual original se conserva.
+========================================================= */
+
+.hero__title-line--small{
+  font-size:.63em;
+  margin-top:.08em;
+  letter-spacing:.025em;
+}
+
+/* PARA QUÉ / CRITERIO */
+.criterion{
+  position:relative;
+  background:var(--white);
+  overflow:hidden;
+}
+.criterion:before{
+  content:'';
+  position:absolute;
+  width:620px;
+  height:620px;
+  right:-330px;
+  top:-280px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(111,179,192,.16),transparent 68%);
+  pointer-events:none;
+}
+.criterion__header{position:relative;z-index:2;margin-bottom:62px}
+.criterion__heading-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:90px;align-items:end}
+.criterion__lead{max-width:560px;color:var(--muted);font-size:1.02rem;line-height:1.8}
+.criterion__lead strong{display:block;margin-top:18px;color:var(--navy);font-weight:700}
+.criterion__story{position:relative;z-index:2;display:grid;grid-template-columns:.72fr 1.28fr;min-height:520px;background:var(--navy);color:var(--white)}
+.criterion__story-media{position:relative;min-height:520px;overflow:hidden;background:var(--navy-2)}
+.criterion__story-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.03)}
+.criterion__story-media:after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,52,103,.65),transparent 58%)}
+.criterion__story-index{position:absolute;z-index:2;left:26px;bottom:24px;padding:7px 10px;border:1px solid rgba(255,255,255,.3);color:var(--white);font-size:.58rem;font-weight:800;letter-spacing:.14em}
+.criterion__story-copy{display:flex;flex-direction:column;justify-content:center;padding:64px 68px}
+.criterion__story-copy>span{color:var(--orange);font-size:.64rem;font-weight:800;letter-spacing:.14em}
+.criterion__story-copy h3{max-width:720px;margin-top:18px;font-family:var(--font-display);font-size:clamp(2.8rem,4.7vw,5.2rem);font-weight:400;line-height:.9}
+.criterion__story-copy p{max-width:720px;margin-top:22px;color:rgba(255,255,255,.58);font-size:.92rem;line-height:1.75}
+.criterion__story-copy p+p{margin-top:12px}
+.criterion__story-copy strong{color:var(--white);font-weight:600}
+.criterion__questions{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:1px;background:var(--border)}
+.criterion__questions article{min-height:260px;padding:31px 28px;background:var(--white);transition:background .3s ease,transform .35s var(--ease)}
+.criterion__questions article:hover{position:relative;z-index:2;background:#f7fbfc;transform:translateY(-4px)}
+.criterion__questions article>span{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--orange);border-radius:50%;color:var(--orange);font-size:.6rem;font-weight:800}
+.criterion__questions h3{margin-top:42px;font-family:var(--font-display);font-size:2rem;font-weight:400;line-height:1}
+.criterion__questions p{margin-top:12px;color:var(--muted);font-size:.83rem;line-height:1.65}
+.criterion__question{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:center;margin-top:52px;padding:28px 32px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.criterion__question small{color:var(--teal);font-size:.62rem;font-weight:800;letter-spacing:.12em}
+.criterion__question p{font-family:var(--font-display);font-size:clamp(2rem,3.4vw,3.4rem);line-height:1;color:var(--navy)}
+
+/* CÓMO */
+.how-we-work{position:relative;overflow:hidden}
+.how-we-work__word{position:absolute;right:-30px;top:25px;font-family:var(--font-display);font-size:clamp(10rem,23vw,27rem);line-height:.8;color:rgba(255,255,255,.025);pointer-events:none}
+.how-we-work .container{position:relative;z-index:2}
+.how-we-work__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.how-card{position:relative;min-height:380px;padding:28px 25px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.018);transition:transform .35s var(--ease),border-color .3s ease,background .3s ease}
+.how-card:hover{transform:translateY(-6px);border-color:rgba(255,111,49,.48);background:rgba(255,255,255,.035)}
+.how-card__number{display:block;color:rgba(255,255,255,.28);font-size:.61rem;font-weight:700;letter-spacing:.12em}
+.how-card__icon{width:72px;height:72px;margin-top:58px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:50%;font-family:var(--font-display);font-size:2.1rem;color:var(--orange)}
+.how-card h3{margin-top:34px;font-family:var(--font-display);font-size:2rem;font-weight:400;line-height:1}
+.how-card p{margin-top:11px;color:rgba(255,255,255,.46);font-size:.79rem;line-height:1.65}
+.how-we-work__cta{margin-top:48px;padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:45px;align-items:center;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.025)}
+.how-we-work__cta p{max-width:770px;color:rgba(255,255,255,.65);font-size:.91rem;line-height:1.7}
+.how-we-work__cta p>span{display:block;margin-bottom:5px;color:var(--orange);font-size:.6rem;font-weight:800;letter-spacing:.13em}
+.how-we-work__cta .text-link{margin-top:0}
+
+/* QUÉ / PROPUESTAS */
+.products-intro{position:relative;background:var(--white);overflow:hidden}
+.products-intro:after{content:'QUÉ';position:absolute;right:-25px;bottom:-85px;font-family:var(--font-display);font-size:clamp(12rem,29vw,31rem);line-height:.8;color:rgba(0,52,103,.025);pointer-events:none}
+.products-intro .container{position:relative;z-index:2}
+.products-intro__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:90px;align-items:end}
+.products-intro__copy{max-width:530px;color:var(--muted);font-size:1rem;line-height:1.75}
+.products-intro__copy p+p{margin-top:12px}
+.products-intro__routes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:62px;background:var(--border);border:1px solid var(--border)}
+.products-intro__routes a{min-height:230px;display:grid;grid-template-rows:auto 1fr auto auto;padding:26px;background:var(--white);color:var(--navy);text-decoration:none;transition:transform .32s var(--ease),background .28s ease,color .28s ease}
+.products-intro__routes a:hover{position:relative;z-index:2;transform:translateY(-5px);background:var(--navy);color:var(--white)}
+.products-intro__routes span{color:var(--orange);font-family:var(--font-display);font-size:1.35rem}
+.products-intro__routes strong{align-self:end;font-family:var(--font-display);font-size:2.05rem;font-weight:400;line-height:1}
+.products-intro__routes small{margin-top:8px;color:var(--muted);font-size:.67rem;line-height:1.45}
+.products-intro__routes a:hover small{color:rgba(255,255,255,.48)}
+.products-intro__routes i{justify-self:end;margin-top:18px;color:var(--orange);font-style:normal}
+
+/* Cierre circular */
+.final-cta__inner>p strong{color:var(--white);font-weight:600}
+
+@media (max-width:980px){
+  .criterion__heading-grid,.products-intro__grid{grid-template-columns:1fr;gap:28px}
+  .criterion__story{grid-template-columns:1fr}
+  .criterion__story-media{min-height:540px}
+  .criterion__questions{grid-template-columns:1fr}
+  .criterion__questions article{min-height:auto}
+  .criterion__question{grid-template-columns:1fr;gap:12px}
+  .how-we-work__grid{grid-template-columns:repeat(2,1fr)}
+  .how-we-work__cta{grid-template-columns:1fr;gap:12px}
+  .products-intro__routes{grid-template-columns:1fr}
+  .products-intro__routes a{min-height:170px}
+}
+
+@media (max-width:640px){
+  .hero__title-line--small{font-size:.68em}
+  .criterion__story-media{min-height:430px}
+  .criterion__story-copy{padding:38px 24px}
+  .criterion__story-copy h3{font-size:clamp(2.7rem,14vw,4.2rem)}
+  .criterion__questions article{padding:24px}
+  .criterion__questions h3{margin-top:30px}
+  .criterion__question{margin-top:34px;padding:24px 0}
+  .how-we-work__grid{grid-template-columns:1fr}
+  .how-card{min-height:315px}
+  .how-card__icon{margin-top:38px}
+  .how-we-work__cta{padding:24px 20px}
+  .products-intro__routes{margin-top:42px}
+  .products-intro__routes a{min-height:160px;padding:22px}
+}
