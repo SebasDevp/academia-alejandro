@@ -1951,3 +1951,136 @@ button.media-card--ebook{width:100%;font:inherit}
   .hero-stat:last-child{border-bottom:0;padding-bottom:0}
   .hero__photo-frame{height:430px;min-height:360px}
 }
+
+/* =========================================================
+   V7 — EXPERIENCIA / ONBOARDING ORIENTADO A CONVERSIÓN
+   Misma identidad visual. Más claridad, evidencia y proceso.
+========================================================= */
+.how-card__body strong{color:rgba(255,255,255,.88);font-weight:600}
+
+.journey{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg,#fff 0%,rgba(111,179,192,.08) 100%);
+}
+.journey:before{
+  content:'PROCESO';
+  position:absolute;
+  right:-38px;
+  top:62px;
+  font-family:var(--font-display);
+  font-size:clamp(9rem,20vw,22rem);
+  line-height:.8;
+  color:rgba(0,52,103,.025);
+  pointer-events:none;
+}
+.journey .container{position:relative;z-index:2}
+.journey__header{margin-bottom:66px}
+.journey__heading-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:86px;align-items:end}
+.journey__lead{max-width:560px;color:rgba(20,20,20,.66);font-size:1.02rem;line-height:1.78}
+.journey__lead strong{color:var(--navy);font-weight:700}
+.journey__lead-note{margin-top:14px;padding-left:18px;border-left:3px solid var(--orange);color:var(--navy);font-weight:600}
+
+.journey__body{display:grid;grid-template-columns:.88fr 1.12fr;gap:0;min-height:690px;background:var(--navy);box-shadow:0 30px 90px rgba(0,52,103,.12)}
+.journey__visual{position:relative;min-height:690px;overflow:hidden;background:var(--navy-2)}
+.journey__visual>img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.04);transition:transform .9s var(--ease),filter .4s ease}
+.journey__visual:hover>img{transform:scale(1.035);filter:saturate(.95) contrast(1.02)}
+.journey__visual-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,52,103,.92) 0%,rgba(0,52,103,.18) 64%,rgba(0,52,103,.04) 100%)}
+.journey__visual figcaption{position:absolute;z-index:2;left:38px;right:38px;bottom:38px;color:var(--white)}
+.journey__visual figcaption small{display:block;margin-bottom:12px;color:var(--orange);font-size:.61rem;font-weight:800;letter-spacing:.15em}
+.journey__visual figcaption strong{display:block;max-width:430px;font-family:var(--font-display);font-size:clamp(2.8rem,4vw,4.4rem);font-weight:400;line-height:.9}
+.journey__visual figcaption p{max-width:430px;margin-top:16px;color:rgba(255,255,255,.65);font-size:.85rem;line-height:1.7}
+.journey__visual-index{position:absolute;z-index:2;top:28px;left:28px;padding:8px 11px;border:1px solid rgba(255,255,255,.4);color:var(--white);font-size:.58rem;font-weight:800;letter-spacing:.12em;background:rgba(0,52,103,.18);backdrop-filter:blur(8px)}
+
+.journey__steps{display:flex;flex-direction:column;justify-content:stretch;padding:12px 48px 12px 54px;color:var(--white)}
+.journey-step{position:relative;display:grid;grid-template-columns:54px 1fr;gap:22px;flex:1;align-items:center;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.journey-step:last-child{border-bottom:0}
+.journey-step:before{content:'';position:absolute;left:18px;top:0;bottom:0;width:1px;background:rgba(255,255,255,.1)}
+.journey-step:first-child:before{top:50%}
+.journey-step:last-child:before{bottom:50%}
+.journey-step__number{position:relative;z-index:2;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:var(--navy);color:var(--orange);font-size:.61rem;font-weight:800;transition:background .3s ease,color .3s ease,border-color .3s ease,transform .35s var(--ease)}
+.journey-step:hover .journey-step__number{background:var(--orange);border-color:var(--orange);color:var(--white);transform:scale(1.08)}
+.journey-step small{color:var(--sky,#6fb3c0);font-size:.58rem;font-weight:800;letter-spacing:.13em}
+.journey-step h3{margin-top:5px;font-family:var(--font-display);font-size:2.05rem;font-weight:400;line-height:1}
+.journey-step p{max-width:640px;margin-top:8px;color:rgba(255,255,255,.5);font-size:.8rem;line-height:1.65}
+
+.journey__proof{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;margin-top:64px;padding:44px 46px;border:1px solid rgba(0,52,103,.12);background:var(--white)}
+.journey__proof-intro>span{color:var(--teal,#007c8c);font-size:.61rem;font-weight:800;letter-spacing:.14em}
+.journey__proof-intro h3{max-width:420px;margin-top:14px;font-family:var(--font-display);font-size:2.9rem;font-weight:400;line-height:.92;color:var(--navy)}
+.journey__proof-intro p{max-width:390px;margin-top:15px;color:rgba(20,20,20,.62);font-size:.88rem;line-height:1.68}
+.journey__proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,52,103,.1)}
+.journey__proof-grid article{min-height:230px;padding:28px 24px;background:#fff;transition:transform .35s var(--ease),background .3s ease}
+.journey__proof-grid article:hover{position:relative;z-index:2;transform:translateY(-5px);background:#f7fbfc}
+.journey__proof-grid i{display:block;color:var(--orange);font-style:normal;font-size:.64rem;font-weight:800;letter-spacing:.1em}
+.journey__proof-grid strong{display:block;margin-top:54px;font-family:var(--font-display);font-size:1.7rem;font-weight:400;line-height:1;color:var(--navy)}
+.journey__proof-grid p{margin-top:10px;color:rgba(20,20,20,.6);font-size:.78rem;line-height:1.62}
+
+.journey__promises{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.journey-promise{position:relative;min-height:330px;padding:40px 40px 42px;overflow:hidden;color:var(--white)}
+.journey-promise:after{content:'↗';position:absolute;right:26px;top:20px;font-family:var(--font-display);font-size:6rem;line-height:1;color:rgba(255,255,255,.06)}
+.journey-promise--orange{background:var(--orange)}
+.journey-promise--teal{background:linear-gradient(135deg,var(--teal,#007c8c),var(--teal-dark,#005a65))}
+.journey-promise>span{font-size:.6rem;font-weight:800;letter-spacing:.14em;color:rgba(255,255,255,.72)}
+.journey-promise h3{max-width:600px;margin-top:52px;font-family:var(--font-display);font-size:clamp(2.8rem,4.4vw,4.5rem);font-weight:400;line-height:.88}
+.journey-promise p{max-width:590px;margin-top:18px;color:rgba(255,255,255,.78);font-size:.9rem;line-height:1.7}
+.journey-promise strong{color:var(--white)}
+
+/* La Academia no se presenta como catálogo: separa recursos, entrenamiento y capa social. */
+.academy-intro__copy-block strong{color:var(--navy);font-weight:700}
+
+@media (max-width:1100px){
+  .journey__body{grid-template-columns:.82fr 1.18fr}
+  .journey__steps{padding-inline:32px}
+  .journey__proof{grid-template-columns:1fr;gap:34px}
+}
+
+@media (max-width:980px){
+  .journey__heading-grid{grid-template-columns:1fr;gap:28px}
+  .journey__body{grid-template-columns:1fr;min-height:0}
+  .journey__visual{min-height:560px}
+  .journey__steps{padding:18px 36px}
+  .journey-step{min-height:170px}
+  .journey__proof-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+@media (max-width:700px){
+  .journey__header{margin-bottom:42px;text-align:center}
+  .journey__header .section-kicker{justify-content:center}
+  .journey__lead{margin-inline:auto;text-align:center}
+  .journey__lead-note{padding:14px 0 0;border-left:0;border-top:2px solid var(--orange)}
+  .journey__visual{min-height:520px}
+  .journey__visual figcaption{left:24px;right:24px;bottom:26px}
+  .journey__visual figcaption strong{font-size:clamp(2.8rem,13vw,4.1rem)}
+  .journey__steps{padding:12px 22px}
+  .journey-step{grid-template-columns:46px 1fr;gap:14px;min-height:0;padding:26px 0}
+  .journey-step:before{left:17px}
+  .journey-step h3{font-size:1.85rem}
+  .journey-step p{font-size:.78rem}
+  .journey__proof{margin-top:34px;padding:30px 22px}
+  .journey__proof-intro{text-align:center}
+  .journey__proof-intro h3,.journey__proof-intro p{margin-left:auto;margin-right:auto}
+  .journey__proof-grid{grid-template-columns:1fr;background:transparent;gap:10px}
+  .journey__proof-grid article{min-height:0;padding:24px;border:1px solid rgba(0,52,103,.1)}
+  .journey__proof-grid strong{margin-top:28px}
+  .journey__promises{grid-template-columns:1fr;gap:10px;margin-top:10px}
+  .journey-promise{min-height:300px;padding:32px 24px 34px;text-align:center}
+  .journey-promise h3{margin-top:42px;font-size:clamp(3rem,14vw,4.3rem)}
+  .journey-promise p{margin-left:auto;margin-right:auto}
+}
+
+@media (max-width:390px){
+  .journey__visual{min-height:470px}
+  .journey__visual-index{top:18px;left:18px}
+  .journey__visual figcaption{left:20px;right:20px;bottom:22px}
+  .journey__steps{padding-inline:18px}
+  .journey-step h3{font-size:1.72rem}
+  .journey__proof{padding:26px 16px}
+  .journey-promise{padding-inline:20px}
+}
+
+/* El recorrido se "enciende" a medida que entra en pantalla. */
+.journey-step.is-visible:before{background:rgba(255,111,49,.46);transition:background .7s ease .18s}
+.journey-step.is-visible .journey-step__number{border-color:rgba(255,111,49,.78);box-shadow:0 0 0 7px rgba(255,111,49,.07)}
+@media (prefers-reduced-motion:reduce){
+  .journey__visual>img,.journey-step__number,.journey__proof-grid article{transition:none!important}
+}

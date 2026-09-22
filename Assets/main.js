@@ -1,6 +1,6 @@
 /* =========================================================
    ACADEMIA DEPORTIVA DIGITAL
-   MAIN.JS — V5 estructura narrativa — refinado
+   MAIN.JS — V7 experiencia narrativa — refinado
 ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
