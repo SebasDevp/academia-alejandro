@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.getElementById('mobileMenu');
   const cursorGlow = document.getElementById('cursorGlow');
   const heroPhoto = document.getElementById('heroPhoto');
+  const journeyVisual = document.querySelector('.journey__visual--premium');
+  const journeyImage = journeyVisual?.querySelector('img');
   const videoModal = document.getElementById('videoModal');
   const videoModalFrame = document.getElementById('videoModalFrame');
 
@@ -65,6 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const movement = (progress - .5) * 20;
         image.style.setProperty('--audience-y', `${movement}px`);
       });
+
+      if (journeyVisual && journeyImage) {
+        const rect = journeyVisual.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+          const movement = Math.max(-12, Math.min(12, (progress - .5) * 24));
+          journeyImage.style.setProperty('--journey-y', `${movement}px`);
+        }
+      }
     }
 
     scrollTicking = false;
@@ -400,6 +411,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-close-ebook]').forEach(control => {
     control.addEventListener('click', closeEbook);
+  });
+
+  /* -------------------------------------------------------
+     AUTO CAROUSEL — tarjetas de seguimiento
+  ------------------------------------------------------- */
+  document.querySelectorAll('[data-how-carousel]').forEach(carousel => {
+    const slides = Array.from(carousel.querySelectorAll('.how-card__slide'));
+    const dots = Array.from(carousel.parentElement.querySelectorAll('.how-card__carousel-dot'));
+    if (slides.length <= 1) return;
+
+    let currentIndex = 0;
+    let intervalId = null;
+
+    const setActiveSlide = index => {
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('is-active', slideIndex === index);
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === index);
+      });
+    };
+
+    const startCarousel = () => {
+      if (intervalId) return;
+      intervalId = window.setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        setActiveSlide(currentIndex);
+      }, 3200);
+    };
+
+    const stopCarousel = () => {
+      if (!intervalId) return;
+      window.clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    setActiveSlide(currentIndex);
+    startCarousel();
+
+    const card = carousel.closest('.how-card');
+    card?.addEventListener('mouseenter', stopCarousel);
+    card?.addEventListener('mouseleave', startCarousel);
   });
 
   /* -------------------------------------------------------

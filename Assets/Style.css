@@ -1769,16 +1769,82 @@ button.media-card--ebook{width:100%;font:inherit}
   background:linear-gradient(to top,rgba(0,52,103,.62),transparent 60%);
   pointer-events:none;
 }
+.how-card__media--panel{
+  padding:18px;
+  background:linear-gradient(145deg,rgba(0,52,103,.96) 0%,rgba(0,90,101,.88) 100%);
+}
+.how-card__screen{
+  position:relative;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);
+  box-shadow:0 22px 45px rgba(0,0,0,.22);
+}
+.how-card--academy .how-card__screen,
+.how-card--session .how-card__screen{
+  background:#eef3f7;
+}
+.how-card--levels .how-card__screen,
+.how-card--whatsapp .how-card__screen{
+  background:#05080d;
+}
 .how-card__media img{
   width:100%;
   height:100%;
   object-fit:cover;
-  filter:saturate(.82) contrast(1.04);
+  object-position:center;
+  filter:saturate(.88) contrast(1.03);
   transition:transform .65s var(--ease),filter .35s ease;
 }
+.how-card--academy .how-card__screen img{object-position:top center;}
+.how-card--levels .how-card__screen img,
+.how-card--whatsapp .how-card__screen img{object-fit:contain; object-position:center top;}
+.how-card--session .how-card__screen img{object-position:top left;}
 .how-card:hover .how-card__media img{
-  transform:scale(1.045);
+  transform:scale(1.035);
   filter:saturate(1) contrast(1.02);
+}
+.how-card__carousel{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+.how-card__slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .65s ease,visibility .65s ease;
+}
+.how-card__slide.is-active{
+  opacity:1;
+  visibility:visible;
+}
+.how-card__carousel-dots{
+  position:absolute;
+  z-index:2;
+  right:14px;
+  bottom:12px;
+  display:flex;
+  gap:6px;
+  padding:6px 8px;
+  border-radius:999px;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(8px);
+}
+.how-card__carousel-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:rgba(255,255,255,.34);
+  transition:transform .25s ease,background .25s ease;
+}
+.how-card__carousel-dot.is-active{
+  background:var(--orange);
+  transform:scale(1.12);
 }
 .how-card__media .how-card__number{
   position:absolute;
@@ -1808,6 +1874,13 @@ button.media-card--ebook{width:100%;font:inherit}
 
 @media (max-width:980px){
   .how-card__media{aspect-ratio:16/10}
+  .how-card__media--panel{padding:14px}
+}
+
+@media (max-width:640px){
+  .how-card__media{aspect-ratio:16/9}
+  .how-card__media--panel{padding:12px}
+  .how-card__carousel-dots{right:10px; bottom:10px}
 }
 
 @media (max-width:640px){
@@ -2083,4 +2156,204 @@ button.media-card--ebook{width:100%;font:inherit}
 .journey-step.is-visible .journey-step__number{border-color:rgba(255,111,49,.78);box-shadow:0 0 0 7px rgba(255,111,49,.07)}
 @media (prefers-reduced-motion:reduce){
   .journey__visual>img,.journey-step__number,.journey__proof-grid article{transition:none!important}
+}
+
+
+/* =========================================================
+   V7.2 — MICROINTERACCIONES PREMIUM
+   Más profundidad y movimiento sin alterar la identidad visual.
+========================================================= */
+
+/* Imagen principal del proceso: entrada editorial + profundidad */
+.journey__visual--premium{
+  isolation:isolate;
+}
+.journey__visual--premium:after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:inset 0 0 0 1px rgba(255,111,49,.03);
+  pointer-events:none;
+}
+.journey__visual--premium>img{
+  --journey-y:0px;
+  transform:translate3d(0,var(--journey-y),0) scale(1.055);
+  transform-origin:center 45%;
+  object-position:center 48%;
+  filter:saturate(.88) contrast(1.035) brightness(.96);
+  will-change:transform;
+}
+.journey__visual--premium.is-visible>img{
+  animation:journeyImageIn 1.35s cubic-bezier(.2,.72,.2,1) both;
+}
+@keyframes journeyImageIn{
+  0%{opacity:.3;transform:translate3d(0,18px,0) scale(1.11);filter:saturate(.65) contrast(1.06) brightness(.8)}
+  100%{opacity:1;transform:translate3d(0,var(--journey-y),0) scale(1.055);filter:saturate(.88) contrast(1.035) brightness(.96)}
+}
+.journey__visual--premium .journey__visual-shade{
+  z-index:1;
+  background:
+    linear-gradient(90deg,rgba(0,52,103,.18),transparent 52%),
+    linear-gradient(to top,rgba(0,52,103,.94) 0%,rgba(0,52,103,.24) 56%,rgba(0,52,103,.05) 100%);
+}
+.journey__visual--premium figcaption,
+.journey__visual--premium .journey__visual-index{z-index:3}
+.journey__visual--premium figcaption small{
+  position:relative;
+  width:max-content;
+}
+.journey__visual--premium figcaption small:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:34px;
+  height:2px;
+  background:var(--orange);
+  transform-origin:left;
+  animation:accentPulse 3.1s ease-in-out infinite;
+}
+@keyframes accentPulse{
+  0%,100%{transform:scaleX(.55);opacity:.55}
+  50%{transform:scaleX(1.45);opacity:1}
+}
+
+/* Línea de recorrido más viva al entrar en viewport */
+.journey-step{
+  overflow:visible;
+  transition:background .35s ease,padding-left .35s var(--ease),border-color .35s ease;
+}
+.journey-step:after{
+  content:"";
+  position:absolute;
+  left:-12px;
+  right:-12px;
+  top:8px;
+  bottom:8px;
+  z-index:-1;
+  opacity:0;
+  background:linear-gradient(90deg,rgba(255,111,49,.08),rgba(111,179,192,.035),transparent 80%);
+  transform:translateX(-12px);
+  transition:opacity .35s ease,transform .45s var(--ease);
+  pointer-events:none;
+}
+.journey-step:hover:after{opacity:1;transform:none}
+.journey-step:hover{padding-left:8px;border-bottom-color:rgba(255,111,49,.24)}
+.journey-step.is-visible .journey-step__number{
+  animation:journeyNodeIn .72s cubic-bezier(.2,.75,.24,1) both;
+}
+@keyframes journeyNodeIn{
+  0%{transform:scale(.72);box-shadow:0 0 0 0 rgba(255,111,49,0)}
+  65%{transform:scale(1.08);box-shadow:0 0 0 11px rgba(255,111,49,.07)}
+  100%{transform:scale(1);box-shadow:0 0 0 7px rgba(255,111,49,.07)}
+}
+
+/* Brillo editorial muy sutil en las tarjetas de CÓMO */
+.how-card{isolation:isolate}
+.how-card:after{
+  content:"";
+  position:absolute;
+  z-index:5;
+  top:-30%;
+  left:-55%;
+  width:28%;
+  height:160%;
+  opacity:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent);
+  transform:rotate(10deg);
+}
+.how-card:hover:after{
+  opacity:1;
+  left:130%;
+  transition:left .85s cubic-bezier(.2,.65,.25,1),opacity .25s ease;
+}
+.how-card__screen{
+  transform:translateZ(0);
+  transition:box-shadow .4s ease,border-color .4s ease,transform .45s var(--ease);
+}
+.how-card:hover .how-card__screen{
+  transform:translateY(-2px);
+  border-color:rgba(255,111,49,.34);
+  box-shadow:0 28px 54px rgba(0,0,0,.27);
+}
+
+/* Pruebas y promesas: lectura más dinámica */
+.journey__proof--premium{
+  position:relative;
+  overflow:hidden;
+}
+.journey__proof--premium:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--orange),var(--teal,#007c8c));
+  transition:width 1.15s cubic-bezier(.2,.7,.2,1) .18s;
+}
+.journey__proof--premium.is-visible:before{width:100%}
+.journey__proof-grid article{
+  position:relative;
+  overflow:hidden;
+}
+.journey__proof-grid article:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:2px;
+  background:var(--orange);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .42s var(--ease);
+}
+.journey__proof-grid article:hover:after{transform:scaleX(1)}
+.journey-promise{
+  transition:transform .42s var(--ease),box-shadow .42s ease;
+}
+.journey-promise:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 56px rgba(0,52,103,.14);
+}
+.journey-promise:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:radial-gradient(circle at 85% 10%,rgba(255,255,255,.16),transparent 34%);
+  transition:opacity .4s ease;
+  pointer-events:none;
+}
+.journey-promise:hover:before{opacity:1}
+
+/* Títulos grandes: leve aparición de color para guiar la mirada */
+.section-title em{
+  background:linear-gradient(90deg,var(--orange) 0%,var(--orange) 48%,#ff9365 62%,var(--orange) 78%);
+  background-size:210% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.section-title.is-visible em{animation:titleSheen 3.6s ease 1 .35s}
+@keyframes titleSheen{0%{background-position:100% 0}100%{background-position:-110% 0}}
+
+/* Respeto total por usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion:reduce){
+  .journey__visual--premium.is-visible>img,
+  .journey-step.is-visible .journey-step__number,
+  .journey__visual--premium figcaption small:after,
+  .section-title.is-visible em{animation:none!important}
+  .how-card:after{display:none!important}
+}
+
+@media (max-width:700px){
+  .journey__visual--premium>img{
+    object-position:center 42%;
+    transform:scale(1.02);
+  }
+  .journey-step:hover{padding-left:0}
+  .journey-promise:hover{transform:none}
 }
