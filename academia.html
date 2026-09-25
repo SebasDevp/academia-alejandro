@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#003467" />
+<meta name="description" content="Recorrido guiado de Academia Deportiva Digital. Empezá por tu primera sesión y explorá los contenidos de Klouser con criterio." />
+<title>Academia Deportiva Digital — Tu recorrido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="./Assets/academy-page.css" rel="stylesheet" />
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="academy-nav">
+  <a class="academy-brand" href="./index.html" aria-label="Volver a Academia Deportiva"><img src="./Assets/img/Brand/ale-fit-logo.png" alt="Ale Fit — Asesor Fitness" /></a>
+  <div class="academy-nav__progress" aria-label="Progreso inicial"><span id="navProgressLabel">TU COMIENZO</span><b id="navProgressValue">0/3</b></div><div class="academy-nav__links"><a href="./index.html">Volver a la web</a><a class="academy-nav__klouser" href="https://klouser.app/group/academia-deportiva" target="_blank" rel="noopener noreferrer">Abrir Klouser ↗</a></div>
+</header>
+<main id="main">
+<section class="academy-hero">
+  <div class="academy-hero__mesh"></div>
+  <div class="academy-shell academy-hero__grid">
+    <div class="academy-hero__copy">
+      <span class="eyebrow">ACADEMIA DEPORTIVA DIGITAL · TU PUNTO DE PARTIDA</span>
+      <h1>ENTRASTE.<br>AHORA <em>EMPEZÁ BIEN.</em></h1>
+      <p>No necesitás mirar ochenta contenidos para sentir que aprovechás la Academia. <strong>Tu primer objetivo es tener tu sesión, hacerla y usar lo que pase ahí para decidir qué mirar después.</strong></p>
+      <div class="academy-hero__focus"><span>HOY TU FOCO ES UNO</span><strong>Hacer tu primera sesión.</strong><small>Después la biblioteca empieza a tener contexto.</small></div>
+      <div class="academy-hero__actions"><a class="btn btn--orange" href="#primeros-pasos">Ver mi recorrido <span>↓</span></a><a class="btn btn--teal" data-request-session href="https://wa.me/5491131763631?text=Hola%20Ale%2C%20ya%20me%20registr%C3%A9%20en%20la%20Academia%20pero%20todav%C3%ADa%20no%20tengo%20mi%20primera%20sesi%C3%B3n.%20%C2%BFMe%20la%20pod%C3%A9s%20enviar%3F" target="_blank" rel="noopener noreferrer">Todavía no tengo sesión <span>↗</span></a></div>
+    </div>
+    <div class="academy-hero__visual" aria-hidden="true">
+      <div class="hero-orbit hero-orbit--one"></div><div class="hero-orbit hero-orbit--two"></div>
+      <div class="hero-card hero-card--main"><img src="./Assets/img/Como/academia.png" alt="" /><div><small>TU ACADEMIA</small><strong>Un camino, no un catálogo.</strong></div></div>
+      <div class="hero-card hero-card--mini"><span>01</span><p>Primera sesión</p></div>
+      <div class="hero-card hero-card--mini hero-card--mini2"><span>02</span><p>Primer ajuste</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="academy-start" id="primeros-pasos">
+  <div class="academy-shell">
+    <div class="section-head"><span class="eyebrow eyebrow--dark">PRIMERA VEZ ACÁ</span><h2>ANTES DE EXPLORAR,<br><em>UBICATE.</em></h2><p>La Academia tiene mucho contenido, pero no necesitás verlo todo. Este recorrido te muestra qué hacer primero, qué mirar después y cuándo pedir ayuda.</p></div>
+    <aside class="session-alert" id="sessionAlert" data-reveal>
+      <div class="session-alert__pulse"><span></span></div>
+      <div class="session-alert__copy"><small>SI YA TE REGISTRASTE Y TODAVÍA NO TENÉS TU SESIÓN</small><h3>No sigas buscando contenido. <em>Pedí tu primera sesión.</em></h3><p>Ese es el punto de partida real. La biblioteca cobra sentido después de entrenar y detectar qué necesitás entender, ajustar o practicar.</p></div>
+      <a data-request-session href="https://wa.me/5491131763631?text=Hola%20Ale%2C%20ya%20me%20registr%C3%A9%20en%20la%20Academia%20pero%20todav%C3%ADa%20no%20tengo%20mi%20primera%20sesi%C3%B3n.%20%C2%BFMe%20la%20pod%C3%A9s%20enviar%3F" target="_blank" rel="noopener noreferrer">PEDIR MI SESIÓN <span>↗</span></a>
+    </aside>
+    <div class="onboarding-progress" aria-label="Tu progreso inicial">
+      <div class="onboarding-progress__head"><span>TU COMIENZO</span><b id="progressText">0 de 3 pasos</b></div>
+      <div class="onboarding-progress__bar"><i id="progressBar"></i></div>
+      <div class="onboarding-progress__labels"><span data-progress-label="access">Entré a Klouser</span><span data-progress-label="session">Hice mi sesión</span><span data-progress-label="share">Conté mi progreso</span></div>
+    </div>
+    <section class="academy-cockpit" id="academyCockpit" aria-label="Estado de tu recorrido">
+      <div class="academy-cockpit__ring" id="progressRing" style="--progress:0deg"><div><strong id="progressPercent">0%</strong><span>RUTA INICIAL</span></div></div>
+      <div class="academy-cockpit__mission">
+        <small id="missionEyebrow">TU PRÓXIMO PASO</small>
+        <h3 id="missionTitle">Entrá a Klouser.</h3>
+        <p id="missionCopy">Primero confirmá que podés entrar con el correo con el que te registraste.</p>
+        <span class="academy-cockpit__status" id="missionStatus">ETAPA 01 · ACCESO</span>
+      </div>
+      <div class="academy-cockpit__badges" aria-label="Logros iniciales">
+        <div class="academy-badge" data-badge="access"><span>01</span><b>Acceso activo</b><small>Entraste a Klouser</small><i>LOGRO</i></div>
+        <div class="academy-badge" data-badge="session"><span>02</span><b>Primera sesión</b><small>La hiciste</small><i>LOGRO</i></div>
+        <div class="academy-badge" data-badge="share"><span>03</span><b>Proceso compartido</b><small>Contaste cómo te fue</small><i>LOGRO</i></div>
+        <div class="academy-badge academy-badge--master" data-master-badge><span>★</span><b>Criterio en marcha</b><small>Completaste tu inicio</small><i>NIVEL 01</i></div>
+      </div>
+    </section>
+    <div class="start-rail start-rail--four">
+      <article class="start-step" data-step="access"><span class="start-step__num">01</span><div class="start-step__icon">↗</div><small>ENTRÁ</small><h3>Entrá a Klouser</h3><p>Usá el correo con el que te registraste. Si pudiste entrar, marcá este paso y seguí.</p><div class="start-step__actions"><a href="https://klouser.app/group/academia-deportiva" target="_blank" rel="noopener noreferrer">Abrir Klouser <span>↗</span></a><button class="mini-check" id="accessDoneButton" type="button">Ya pude entrar <span>✓</span></button></div></article>
+      <article class="start-step start-step--ask"><span class="start-step__num">02</span><div class="start-step__icon">💬</div><small>SI TODAVÍA NO LA TENÉS</small><h3>Pedí tu primera sesión</h3><p>Si ya te registraste pero todavía no recibiste tu sesión, escribile a Ale. No necesitás elegir una clase por tu cuenta.</p><a class="start-step__whatsapp" data-request-session href="https://wa.me/5491131763631?text=Hola%20Ale%2C%20ya%20me%20registr%C3%A9%20en%20la%20Academia%20pero%20todav%C3%ADa%20no%20tengo%20mi%20primera%20sesi%C3%B3n.%20%C2%BFMe%20la%20pod%C3%A9s%20enviar%3F" target="_blank" rel="noopener noreferrer">Pedímela por WhatsApp <span>↗</span></a><small class="step-helper" id="requestStatus">Cuando la tengas, hacela y volvé acá.</small></article>
+      <article class="start-step start-step--focus" data-step="session"><span class="start-step__num">03</span><div class="start-step__icon">▶</div><small>PRIMERO</small><h3>Hacé tu primera sesión</h3><p>Entrená antes de sumergirte en contenido. Ahí aparecen las preguntas reales y empieza a tener sentido lo que vas a mirar después.</p><button class="session-complete-btn" id="sessionDoneButton" type="button"><span>✓</span> Ya hice mi primera sesión</button></article>
+      <article class="start-step start-step--community" data-step="share"><span class="start-step__num">04</span><div class="start-step__icon">♥</div><small>DESPUÉS</small><h3>Contá cómo te fue</h3><p>Una vez que hiciste tu sesión, compartí una frase simple: qué sentiste, qué te costó o qué descubriste. <strong>Aprender a entrenar también es aprender a comunicar lo que te pasa.</strong></p><div class="start-step__share-actions"><a class="community-action" id="communityProgressButton" href="https://wa.me/5491131763631?text=Hola%20Ale%2C%20ya%20hice%20mi%20primera%20sesi%C3%B3n.%20Mi%20progreso%20hasta%20ahora%3A%20" target="_blank" rel="noopener noreferrer">Abrir WhatsApp para contarlo <span>↗</span></a><button class="share-done-btn" id="shareDoneButton" type="button">Ya lo compartí <span>✓</span></button></div><small class="step-helper">Cuando tengamos el enlace directo de <strong>Hablemos</strong>, el acceso irá al grupo de la comunidad.</small></article>
+    </div>
+    <div class="start-note"><strong>La lógica es simple:</strong><span><b>sesión → duda real → contenido útil → mejor decisión.</b> No al revés.</span></div>
+  </div>
+</section>
+
+<section class="guided-route is-locked" id="ruta-sugerida">
+  <div class="academy-shell">
+    <div class="route-lock" id="routeLock">
+      <span id="routeLockBadge">02</span>
+      <small id="routeLockEyebrow">TU SIGUIENTE PASO</small>
+      <h3 id="routeLockTitle">Primero hacé tu sesión.</h3>
+      <p id="routeLockCopy">La biblioteca cobra sentido cuando ya tenés una experiencia propia para observar.</p>
+      <button id="routeLockAction" type="button">Ir a mi próximo paso <span>↓</span></button>
+      <small class="route-lock__helper">Tu avance queda guardado en este dispositivo.</small>
+    </div>
+    <div class="route-content" id="routeContent" aria-hidden="true">
+      <div class="route-unlocked-head">
+        <div class="route-unlocked-head__badge"><span>✓</span><small>RUTA DESBLOQUEADA</small></div>
+        <div><span class="eyebrow">PRIMER BLOQUE DE APRENDIZAJE</span><h2>YA ENTRENASTE.<br><em>AHORA APRENDÉ CON CONTEXTO.</em></h2><p>No ganás nada por mirar veinte videos. Ganás criterio cuando aprendés algo, lo probás, lo comunicás y volvés a ajustar.</p></div>
+      </div>
+      <div class="learning-loop" aria-label="Ciclo recomendado de aprendizaje">
+        <div><span>01</span><b>ENTRENÁ</b><small>Hacé la sesión</small></div><i>→</i>
+        <div><span>02</span><b>OBSERVÁ</b><small>Registrá qué pasó</small></div><i>→</i>
+        <div><span>03</span><b>APRENDÉ</b><small>Elegí un recurso</small></div><i>→</i>
+        <div><span>04</span><b>COMUNICÁ</b><small>Compartilo en grupo</small></div>
+      </div>
+      <div class="starter-kit-head"><div><small>PARA EMPEZAR SIN PERDERTE</small><h3>TUS PRIMEROS 4 RECURSOS</h3></div><p>Dos lecturas para entender el enfoque y dos videos para empezar a mirar el movimiento con más criterio.</p></div>
+      <div class="starter-kit-grid" id="starterKitGrid"></div>
+      <div class="section-head section-head--light route-next-head"><span class="eyebrow">DESPUÉS DEL PRIMER BLOQUE</span><h2>SEGUÍ SEGÚN<br><em>LO QUE APAREZCA.</em></h2><p>No es obligatorio seguir este orden. Usalo como mapa para no entrar a la biblioteca a ciegas.</p></div>
+      <div class="route-grid">
+        <a class="route-card" href="#categoria-teoria-entrenamiento" data-open-category="teoria-entrenamiento"><span>01</span><small>ENTENDER</small><h3>Qué significa entrenar</h3><p>Empezá por las bases para que las decisiones de la sesión tengan sentido.</p><b>Teoría del Entrenamiento →</b></a>
+        <a class="route-card" href="#categoria-calentamiento" data-open-category="calentamiento"><span>02</span><small>PREPARAR</small><h3>Cómo preparar el cuerpo</h3><p>Antes de exigir, aprendé a entrar en movimiento con una intención clara.</p><b>Calentamiento General →</b></a>
+        <a class="route-card" href="#categoria-meta" data-open-category="meta"><span>03</span><small>MOVERTE</small><h3>Ampliá tu repertorio</h3><p>Explorá ejercicios y variantes para sumar recursos, no para copiar rutinas.</p><b>Ejercicios META →</b></a>
+        <a class="route-card" href="#categoria-recuperacion" data-open-category="recuperacion"><span>04</span><small>SOSTENER</small><h3>Aprendé a recuperar</h3><p>El proceso no termina cuando termina la sesión. Recuperar también construye.</p><b>Recuperación Facilitada →</b></a>
+      </div>
+      <div class="route-principle"><span>RECORDÁ</span><p><strong>Entrenar, aprender y comunicar.</strong> El contenido sirve cuando vuelve a tu cuerpo y a tu proceso.</p><a href="#biblioteca-completa">Explorar biblioteca completa ↓</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="quick-paths">
+ <div class="academy-shell">
+  <div class="section-head"><span class="eyebrow eyebrow--dark">SEGÚN TU DÍA</span><h2>¿QUÉ NECESITÁS <em>HOY?</em></h2><p>No siempre entrás a la Academia con la misma necesidad. Elegí una puerta de entrada.</p></div>
+  <div class="quick-grid">
+   <button data-open-category="sin-tiempo"><span>10'</span><h3>Tengo poco tiempo</h3><p>Recursos cortos para no cortar el vínculo con el movimiento.</p><b>Ver opciones →</b></button>
+   <button data-open-category="desafios"><span>5'</span><h3>Quiero moverme ya</h3><p>Desafíos simples para activar el cuerpo sin sobrepensarlo.</p><b>Ir a desafíos →</b></button>
+   <button data-open-category="teoria-caso"><span>?</span><h3>Quiero entender mejor</h3><p>Casos y teoría para mirar el entrenamiento con otro criterio.</p><b>Profundizar →</b></button>
+   <button data-open-category="zoom"><span>●</span><h3>Quiero sentirme acompañado</h3><p>Encuentros y espacios compartidos para preguntas y reflexión.</p><b>Ver encuentros →</b></button>
+  </div>
+ </div>
+</section>
+
+<section class="library" id="biblioteca-completa">
+  <div class="academy-shell">
+    <div class="library-head"><div><span class="eyebrow">BIBLIOTECA COMPLETA</span><h2>ENCONTRÁ LO QUE<br><em>HOY TE SIRVE.</em></h2><p class="library-head__intro">Primero elegí una categoría. Después abrí solamente el recurso que tenga sentido para tu momento.</p></div><div class="library-head__tools"><label><span>BUSCAR</span><input id="portalSearch" type="search" placeholder="Ej: calentamiento, teoría, e-book..." autocomplete="off" /></label><p><strong id="portalCount">17</strong> categorías</p></div></div>
+    <div class="library-guide"><span>1</span><p><strong>Elegí qué necesitás</strong><small>No busques “ver todo”. Buscá resolver algo.</small></p><i>→</i><span>2</span><p><strong>Entrá a una categoría</strong><small>Después elegí un solo recurso.</small></p><i>→</i><span>3</span><p><strong>Volvé a entrenar</strong><small>La idea es usarlo, no coleccionarlo.</small></p></div>
+    <div class="library-tabs" id="libraryTabs" role="tablist" aria-label="Filtrar biblioteca"><button class="is-active" data-library-group="all" type="button">Todo</button><button data-library-group="start" type="button">Para empezar</button><button data-library-group="move" type="button">Moverme</button><button data-library-group="learn" type="button">Entender</button><button data-library-group="community" type="button">Comunidad</button></div>
+    <div class="category-grid" id="categoryGrid"></div>
+    <div class="resource-drawer" id="resourceDrawer" aria-live="polite" hidden>
+      <div class="resource-drawer__top"><div><span id="drawerKicker"></span><h3 id="drawerTitle"></h3><p id="drawerDescription"></p><small class="drawer-note">Cada portada usa el título real disponible. Pasá el mouse para ver una orientación breve antes de abrir el recurso.</small></div><button id="drawerClose" type="button" aria-label="Cerrar categoría">×</button></div>
+      <div class="resource-list" id="resourceList"></div>
+    </div>
+    <div class="library-empty" id="libraryEmpty" hidden><strong>No encontramos esa categoría.</strong><span>Probá con otra palabra.</span></div>
+  </div>
+</section>
+
+<section class="academy-end">
+ <div class="academy-shell academy-end__grid"><div><span class="eyebrow">NO HACE FALTA SABER TODO</span><h2>ENTRENÁ.<br><em>PREGUNTÁ.</em><br>VOLVÉ.</h2></div><div><p>La mejor forma de usar esta Academia es circular entre práctica y comprensión. Cada duda que aparece entrenando puede convertirse en una mejor decisión.</p><a href="https://klouser.app/group/academia-deportiva" target="_blank" rel="noopener noreferrer">Abrir Klouser <span>↗</span></a><a class="back-link" href="./index.html">Volver a la web principal</a></div></div>
+</section>
+</main>
+<footer class="academy-footer"><div class="academy-shell"><img src="./Assets/img/Brand/ale-fit-logo.png" alt="Ale Fit" /><p>Academia Deportiva Digital · Alejandro Cortez</p></div></footer>
+<script src="./Assets/academy-data.js"></script>
+<script src="./Assets/academy-page.js"></script>
+</body>
+</html>
